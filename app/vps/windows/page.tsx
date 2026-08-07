@@ -52,90 +52,172 @@ interface Plan {
   ram: string;
   cpu: string;
   storage: string;
-  bandwidth: string;
   features: string[];
   price: number;
   href: string;
   icon?: string;
-  popular?: boolean;
 }
 
-const WINDOWS_PLANS: Plan[] = [
-  {
-    name: "Starter Windows VPS",
-    ram: "2 GB",
-    cpu: "1 vCPU",
-    storage: "25 GB NVMe",
-    bandwidth: "1 TB",
-    price: 2500,
-    href: "https://my.vynex.pk/index.php?rp=/store/windows-vps/starter-vps",
+interface LocationTab {
+  key: string;
+  label: string;
+  icon: string;
+  tagline: string;
+  slug: string;
+  plans: Plan[];
+}
+
+const basePlan = (
+  slug: string,
+  overrides: { ram: string; cpu: string; storage: string; price: number }[]
+): Plan[] => {
+  const templates = [
+    {
+      name: "Starter VPS",
+      support: "24/7 Support",
+      extraSetup: false,
+    },
+    {
+      name: "Business VPS",
+      support: "24/7 Support",
+      extraSetup: true,
+    },
+    {
+      name: "Professional VPS",
+      support: "Priority Support",
+      extraSetup: true,
+    },
+    {
+      name: "Enterprise VPS",
+      support: "Premium Support",
+      extraSetup: true,
+    },
+  ];
+
+  return templates.map((t, i) => ({
+    name: t.name,
+    ram: overrides[i].ram,
+    cpu: overrides[i].cpu,
+    storage: overrides[i].storage,
+    price: overrides[i].price,
+    icon: "/windows-server.svg",
+    href: `https://my.vynex.pk/index.php?rp=/store/${slug}-windows-vps/${t.name
+      .toLowerCase()
+      .replace(" vps", "")}-vps`,
     features: [
-      "10 Gbps Uplink",
-      "1x IPv4",
-      "/64 IPv6",
-      "Free Setup",
-      "Instant Delivery",
-      "Full Admin RDP",
-      "24/7 Support",
+      "Full Admin RDP Access",
+      "99.9% Uptime",
+      "Free Windows OS",
+      ...(t.extraSetup ? ["Instant Setup"] : []),
+      t.support,
     ],
+  }));
+};
+
+const LOCATION_TABS: LocationTab[] = [
+  {
+    key: "pakistan",
+    label: "Pakistan",
+    icon: "/pakistan-vps.svg",
+    slug: "pakistan",
+    tagline: "Best Windows VPS hosting in Pakistan — Islamabad, Karachi & Lahore low-latency nodes",
+    plans: basePlan("pakistan", [
+      { ram: "2 GB", cpu: "2 vCPU", storage: "20 GB NVMe", price: 1700 },
+      { ram: "4 GB", cpu: "2 vCPU", storage: "30 GB NVMe", price: 3000 },
+      { ram: "8 GB", cpu: "4 vCPU", storage: "50 GB NVMe", price: 4500 },
+      { ram: "16 GB", cpu: "8 vCPU", storage: "100 GB NVMe", price: 6500 },
+    ]),
   },
   {
-    name: "Business Windows VPS",
-    ram: "4 GB",
-    cpu: "2 vCPU",
-    storage: "50 GB NVMe",
-    bandwidth: "2 TB",
-    price: 4500,
-    href: "https://my.vynex.pk/index.php?rp=/store/windows-vps/business-vps",
-    features: [
-      "10 Gbps Uplink",
-      "1x IPv4",
-      "/64 IPv6",
-      "Free Setup",
-      "Instant Delivery",
-      "Full Admin RDP",
-      "24/7 Support",
-      "Priority Support",
-    ],
+    key: "usa",
+    label: "USA",
+    icon: "/usa-vps.svg",
+    slug: "usa",
+    tagline: "Cheap & fastest Windows VPS in USA — Dallas, New York & Los Angeles datacenters",
+    plans: basePlan("usa", [
+      { ram: "2 GB", cpu: "2 vCPU", storage: "20 GB NVMe", price: 1700 },
+      { ram: "4 GB", cpu: "2 vCPU", storage: "30 GB NVMe", price: 3000 },
+      { ram: "8 GB", cpu: "4 vCPU", storage: "50 GB NVMe", price: 4500 },
+      { ram: "16 GB", cpu: "8 vCPU", storage: "100 GB NVMe", price: 6500 },
+    ]),
   },
   {
-    name: "Professional Windows VPS",
-    ram: "8 GB",
-    cpu: "4 vCPU",
-    storage: "100 GB NVMe",
-    bandwidth: "4 TB",
-    price: 7000,
-    href: "https://my.vynex.pk/index.php?rp=/store/windows-vps/professional-vps",
-    popular: true,
-    features: [
-      "10 Gbps Uplink",
-      "2x IPv4",
-      "/64 IPv6",
-      "Free Setup",
-      "Instant Delivery",
-      "Full Admin RDP",
-      "Priority Support",
-      "DDoS Protection",
-    ],
+    key: "uk",
+    label: "UK",
+    icon: "/uk-vps.svg",
+    slug: "uk",
+    tagline: "High-performance Windows VPS in UK — London datacenter with fast European routing",
+    plans: basePlan("uk", [
+      { ram: "2 GB", cpu: "2 vCPU", storage: "20 GB NVMe", price: 1700 },
+      { ram: "4 GB", cpu: "2 vCPU", storage: "30 GB NVMe", price: 3000 },
+      { ram: "8 GB", cpu: "4 vCPU", storage: "50 GB NVMe", price: 4500 },
+      { ram: "16 GB", cpu: "8 vCPU", storage: "100 GB NVMe", price: 6500 },
+    ]),
   },
   {
-    name: "Enterprise Windows VPS",
-    ram: "16 GB",
-    cpu: "8 vCPU",
-    storage: "200 GB NVMe",
-    bandwidth: "8 TB",
-    price: 12000,
-    href: "https://my.vynex.pk/index.php?rp=/store/windows-vps/enterprise-vps",
-    features: [
-      "10 Gbps Uplink",
-      "4x IPv4",
-      "/64 IPv6",
-      "Free Setup",
-      "Instant Delivery",
-      "Full Admin RDP",
-      "Premium Support",
-      "Advanced DDoS Protection",
-    ],
+    key: "australia",
+    label: "Australia",
+    icon: "/australia-vps.svg",
+    slug: "australia",
+    tagline: "Affordable Windows VPS in Australia — Sydney datacenter for APAC-facing workloads",
+    plans: basePlan("australia", [
+      { ram: "2 GB", cpu: "1 vCPU", storage: "25 GB NVMe", price: 2200 },
+      { ram: "4 GB", cpu: "2 vCPU", storage: "40 GB NVMe", price: 3800 },
+      { ram: "8 GB", cpu: "4 vCPU", storage: "60 GB NVMe", price: 5600 },
+      { ram: "16 GB", cpu: "6 vCPU", storage: "120 GB NVMe", price: 8200 },
+    ]),
+  },
+  {
+    key: "canada",
+    label: "Canada",
+    icon: "/canada-vps.svg",
+    slug: "canada",
+    tagline: "Reliable Windows VPS in Canada — Toronto datacenter with North American reach",
+    plans: basePlan("canada", [
+      { ram: "2 GB", cpu: "2 vCPU", storage: "20 GB NVMe", price: 2000 },
+      { ram: "4 GB", cpu: "3 vCPU", storage: "35 GB NVMe", price: 3500 },
+      { ram: "8 GB", cpu: "4 vCPU", storage: "55 GB NVMe", price: 5200 },
+      { ram: "16 GB", cpu: "8 vCPU", storage: "110 GB NVMe", price: 7400 },
+    ]),
+  },
+  {
+    key: "dubai",
+    label: "Dubai",
+    icon: "/dubai-vps.svg",
+    slug: "dubai",
+    tagline: "Premium Windows VPS in Dubai — UAE datacenter with Middle East connectivity",
+    plans: basePlan("dubai", [
+      { ram: "2 GB", cpu: "1 vCPU", storage: "25 GB NVMe", price: 1900 },
+      { ram: "4 GB", cpu: "2 vCPU", storage: "50 GB NVMe", price: 3200 },
+      { ram: "8 GB", cpu: "4 vCPU", storage: "100 GB NVMe", price: 4800 },
+      { ram: "16 GB", cpu: "8 vCPU", storage: "200 GB NVMe", price: 8800 },
+    ]),
+  },
+  {
+    key: "germany",
+    label: "Germany",
+    icon: "/germany-vps.svg",
+    slug: "germany",
+    tagline: "High-performance Windows VPS in Germany — Frankfurt datacenter with European routing",
+    plans: basePlan("germany", [
+      { ram: "2 GB", cpu: "1 vCPU", storage: "25 GB NVMe", price: 2000 },
+      { ram: "4 GB", cpu: "2 vCPU", storage: "50 GB NVMe", price: 3500 },
+      { ram: "8 GB", cpu: "4 vCPU", storage: "100 GB NVMe", price: 5200 },
+      { ram: "16 GB", cpu: "8 vCPU", storage: "200 GB NVMe", price: 9000 },
+    ]),
+  },
+  {
+    key: "singapore",
+    label: "Singapore",
+    icon: "/singapore-vps.svg",
+    slug: "singapore",
+    tagline: "Fast Windows VPS in Singapore — Asia-Pacific datacenter with low latency",
+    plans: basePlan("singapore", [
+      { ram: "2 GB", cpu: "1 vCPU", storage: "25 GB NVMe", price: 2200 },
+      { ram: "4 GB", cpu: "2 vCPU", storage: "50 GB NVMe", price: 3800 },
+      { ram: "8 GB", cpu: "4 vCPU", storage: "100 GB NVMe", price: 5600 },
+      { ram: "16 GB", cpu: "8 vCPU", storage: "200 GB NVMe", price: 8500 },
+    ]),
   },
 ];
 
@@ -147,13 +229,13 @@ const FEATURES = [
   },
   {
     icon: ShieldCheck,
-    title: "Free Windows / Linux",
-    description: "Choose between Windows Server or Linux OS at no additional cost.",
+    title: "Free Windows OS",
+    description: "Choose between Windows Server or Windows 10 OS at no additional cost.",
   },
   {
-    icon: Terminal,
-    title: "Full Root / Admin RDP",
-    description: "Complete root access on Linux or administrator RDP access on Windows.",
+    icon: MonitorSmartphone,
+    title: "Full Admin RDP Access",
+    description: "Complete administrator RDP access to install any Windows-compatible software.",
   },
   {
     icon: Globe,
@@ -174,8 +256,8 @@ const FEATURES = [
 
 const PLAN_FEATURES = [
   {
-    icon: Terminal,
-    title: "Full Admin Access",
+    icon: MonitorSmartphone,
+    title: "Full Admin RDP Access",
     description: "Complete control of your Windows VPS with full administrator RDP access.",
   },
   {
@@ -255,51 +337,6 @@ const LOCATIONS = [
   { icon: "/australia-vps.svg", label: "Australia VPS", locations: "Australia" },
 ];
 
-const COMPARISON_DATA = [
-  {
-    feature: "Description",
-    vps: "Your own virtual private server with full admin or root access",
-    managed: "VPS with expert management and support",
-    shared: "Shared hosting on pooled resources",
-    dedicated: "Single-tenant physical server isolation",
-  },
-  {
-    feature: "Control",
-    vps: "Complete control to install custom software",
-    managed: "High control with some abstraction",
-    shared: "Low control and limited configuration",
-    dedicated: "Full control at hardware and OS level",
-  },
-  {
-    feature: "Resources",
-    vps: "Dedicated CPU, RAM & NVMe SSD (scalable)",
-    managed: "Allocated VPS resources",
-    shared: "No guaranteed CPU or RAM",
-    dedicated: "Dedicated machine-level resources",
-  },
-  {
-    feature: "ISO / OS",
-    vps: "FREE Windows Server & Linux OS",
-    managed: "Windows or Linux (license based)",
-    shared: "Limited OS choices",
-    dedicated: "Any OS (license required)",
-  },
-  {
-    feature: "Management",
-    vps: "You manage OS, software, and updates",
-    managed: "Monitoring and updates included",
-    shared: "Fully managed by provider",
-    dedicated: "You or your team manage everything",
-  },
-  {
-    feature: "Best For",
-    vps: "Windows VPS hosting for RDP, business applications, automation, and streaming",
-    managed: "Teams wanting power with less upkeep",
-    shared: "Small websites and blogs",
-    dedicated: "Enterprise and compliance workloads",
-  },
-];
-
 const FAQS = [
   {
     q: "What is Windows VPS?",
@@ -307,7 +344,7 @@ const FAQS = [
   },
   {
     q: "What versions of Windows do you offer?",
-    a: "We offer Windows Server 2016, Windows Server 2019, Windows Server 2022, and Windows 10/11 with full RDP access.",
+    a: "We offer Windows Server 2019, Windows Server 2022, and Windows 10/11 with full RDP access.",
   },
   {
     q: "What is the difference between Windows VPS and Linux VPS?",
@@ -348,6 +385,9 @@ const FAQS = [
 /* ------------------------------------------------------------------ */
 
 export default function WindowsVPSPage() {
+  const [activeTab, setActiveTab] = useState(LOCATION_TABS[0].key);
+  const active = LOCATION_TABS.find((t) => t.key === activeTab)!;
+
   const structuredData = {
     "@context": "https://schema.org",
     "@type": "WebPage",
@@ -361,9 +401,9 @@ export default function WindowsVPSPage() {
       "offers": {
         "@type": "AggregateOffer",
         "priceCurrency": "PKR",
-        "lowPrice": "2500",
-        "highPrice": "12000",
-        "offerCount": "4"
+        "lowPrice": "1700",
+        "highPrice": "9000",
+        "offerCount": "32"
       }
     }
   };
@@ -371,16 +411,16 @@ export default function WindowsVPSPage() {
   return (
     <>
       <Head>
-        <title>Windows VPS Hosting - Best Windows VPS in Pakistan | Vynex</title>
-        <meta name="description" content="Best Windows VPS hosting in Pakistan with FREE Windows OS, full RDP access, NVMe SSD, and 24/7 support. Available in Pakistan, USA, UK, Germany & more." />
+        <title>Windows VPS Hosting - Best Windows VPS in Pakistan, USA, UK & More</title>
+        <meta name="description" content="Best Windows VPS hosting in Pakistan, USA, UK, Canada, Australia & more. FREE Windows OS, full RDP access, NVMe SSD, and 24/7 support. Starting from 1,700 PKR." />
         <meta name="keywords" content="Windows VPS, Windows VPS Pakistan, Windows RDP, Windows Server, VPS Hosting, Windows VPS Hosting, RDP Hosting, Cheap Windows VPS" />
         <meta name="robots" content="index, follow" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <meta name="author" content="Vynex Hosting Solutions" />
         
         {/* Open Graph */}
-        <meta property="og:title" content="Windows VPS Hosting - Best Windows VPS in Pakistan | Vynex" />
-        <meta property="og:description" content="Best Windows VPS hosting in Pakistan with FREE Windows OS, full RDP access, NVMe SSD, and 24/7 support." />
+        <meta property="og:title" content="Windows VPS Hosting - Best Windows VPS in Pakistan, USA, UK & More" />
+        <meta property="og:description" content="Best Windows VPS hosting with FREE Windows OS, full RDP access, NVMe SSD, and 24/7 support. Available in Pakistan, USA, UK, Canada, Australia & more." />
         <meta property="og:type" content="website" />
         <meta property="og:url" content="https://vynex.pk/vps/windows" />
         <meta property="og:image" content="https://vynex.pk/windows-vps-og.png" />
@@ -388,8 +428,8 @@ export default function WindowsVPSPage() {
         
         {/* Twitter Card */}
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content="Windows VPS Hosting - Best Windows VPS in Pakistan | Vynex" />
-        <meta name="twitter:description" content="Best Windows VPS hosting in Pakistan with FREE Windows OS, full RDP access, NVMe SSD, and 24/7 support." />
+        <meta name="twitter:title" content="Windows VPS Hosting - Best Windows VPS in Pakistan, USA, UK & More" />
+        <meta name="twitter:description" content="Best Windows VPS hosting with FREE Windows OS, full RDP access, NVMe SSD, and 24/7 support." />
         <meta name="twitter:image" content="https://vynex.pk/windows-vps-og.png" />
         
         {/* Canonical URL */}
@@ -749,54 +789,62 @@ export default function WindowsVPSPage() {
           line-height: 1.6;
         }
 
-        /* ---------- Plan Features ---------- */
-        .plan-features-section {
-          background: #faf8ff;
-          padding: 64px 32px;
-          border-top: 1px solid #f0ebf8;
-          border-bottom: 1px solid #f0ebf8;
-        }
-        .plan-features-grid {
-          display: grid;
-          grid-template-columns: repeat(4, 1fr);
-          gap: 20px;
+        /* ---------- Location tabs ---------- */
+        .tabs-section {
+          padding: 80px 32px;
           max-width: 1280px;
-          margin: 40px auto 0;
+          margin: 0 auto;
         }
-        .plan-feature-card {
-          background: #fff;
+        .tabs-head {
+          text-align: center;
+          max-width: 760px;
+          margin: 0 auto 40px;
+        }
+        .tabs-head h2 {
+          font-size: 32px;
+          margin: 14px 0 10px;
+        }
+        .tabs-bar {
+          display: flex;
+          justify-content: center;
+          gap: 8px;
+          flex-wrap: wrap;
+          margin-bottom: 44px;
+        }
+        .tab-btn {
+          display: inline-flex;
+          align-items: center;
+          gap: 10px;
+          padding: 10px 20px;
+          border-radius: 999px;
           border: 1px solid #f0ebf8;
-          border-radius: 12px;
-          padding: 20px;
+          background: #fff;
+          font-size: 13px;
+          font-weight: 700;
+          color: #64748b;
+          cursor: pointer;
           transition: all 0.15s ease;
         }
-        .plan-feature-card:hover {
+        .tab-btn img {
+          width: 18px;
+          height: 18px;
+          object-fit: contain;
+        }
+        .tab-btn:hover {
           border-color: #ded1fb;
-          transform: translateY(-2px);
-          box-shadow: 0 8px 24px rgba(109, 40, 217, 0.06);
-        }
-        .plan-feature-card .icon {
-          width: 40px;
-          height: 40px;
-          border-radius: 10px;
-          background: #f8f5ff;
           color: #6d28d9;
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          margin-bottom: 10px;
         }
-        .plan-feature-card h4 {
-          font-size: 14px;
-          font-weight: 700;
-          color: #0f172a;
-          margin: 0 0 4px;
+        .tab-btn.active {
+          background: #6d28d9;
+          border-color: #6d28d9;
+          color: #fff;
+          box-shadow: 0 8px 20px rgba(109, 40, 217, 0.25);
         }
-        .plan-feature-card p {
-          font-size: 12.5px;
-          color: #64748b;
-          margin: 0;
-          line-height: 1.5;
+        .tab-tagline {
+          text-align: center;
+          font-size: 13px;
+          color: #94a3b8;
+          margin: -28px 0 36px;
         }
 
         /* ---------- Plan Cards ---------- */
@@ -804,7 +852,6 @@ export default function WindowsVPSPage() {
           display: grid;
           grid-template-columns: repeat(4, 1fr);
           gap: 20px;
-          margin-top: 40px;
         }
         .plan-card {
           border: 1px solid #f0ebf8;
@@ -819,7 +866,7 @@ export default function WindowsVPSPage() {
           border-color: #ded1fb;
           transform: translateY(-3px);
         }
-        .plan-card.popular {
+        .plan-card.pro {
           border-color: #6d28d9;
           background: linear-gradient(180deg, #faf6ff 0%, #ffffff 40%);
           position: relative;
@@ -837,11 +884,21 @@ export default function WindowsVPSPage() {
           padding: 4px 10px;
           border-radius: 999px;
         }
+        .plan-header {
+          display: flex;
+          align-items: center;
+          gap: 10px;
+          margin-bottom: 12px;
+        }
+        .plan-header img {
+          width: 24px;
+          height: 24px;
+          object-fit: contain;
+        }
         .plan-name {
-          font-size: 16px;
+          font-size: 15px;
           font-weight: 700;
           color: #0f172a;
-          margin-bottom: 12px;
         }
         .plan-specs {
           display: flex;
@@ -911,12 +968,62 @@ export default function WindowsVPSPage() {
           background: #6d28d9;
           color: #fff;
         }
-        .plan-card.popular .plan-cta {
+        .plan-card.pro .plan-cta {
           background: #6d28d9;
           color: #fff;
         }
-        .plan-card.popular .plan-cta:hover {
+        .plan-card.pro .plan-cta:hover {
           background: #5b21b6;
+        }
+
+        /* ---------- Plan Features ---------- */
+        .plan-features-section {
+          background: #faf8ff;
+          padding: 64px 32px;
+          border-top: 1px solid #f0ebf8;
+          border-bottom: 1px solid #f0ebf8;
+        }
+        .plan-features-grid {
+          display: grid;
+          grid-template-columns: repeat(4, 1fr);
+          gap: 20px;
+          max-width: 1280px;
+          margin: 40px auto 0;
+        }
+        .plan-feature-card {
+          background: #fff;
+          border: 1px solid #f0ebf8;
+          border-radius: 12px;
+          padding: 20px;
+          transition: all 0.15s ease;
+        }
+        .plan-feature-card:hover {
+          border-color: #ded1fb;
+          transform: translateY(-2px);
+          box-shadow: 0 8px 24px rgba(109, 40, 217, 0.06);
+        }
+        .plan-feature-card .icon {
+          width: 40px;
+          height: 40px;
+          border-radius: 10px;
+          background: #f8f5ff;
+          color: #6d28d9;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          margin-bottom: 10px;
+        }
+        .plan-feature-card h4 {
+          font-size: 14px;
+          font-weight: 700;
+          color: #0f172a;
+          margin: 0 0 4px;
+        }
+        .plan-feature-card p {
+          font-size: 12.5px;
+          color: #64748b;
+          margin: 0;
+          line-height: 1.5;
         }
 
         /* ---------- OS Section ---------- */
@@ -1022,50 +1129,6 @@ export default function WindowsVPSPage() {
           font-size: 9px;
           font-weight: 600;
           color: #94a3b8;
-        }
-
-        /* ---------- Comparison Table ---------- */
-        .comparison-section {
-          padding: 64px 32px;
-          overflow-x: auto;
-          max-width: 1280px;
-          margin: 0 auto;
-        }
-        .comparison-table {
-          width: 100%;
-          margin: 40px auto 0;
-          border-collapse: collapse;
-          font-size: 13px;
-          min-width: 700px;
-        }
-        .comparison-table th {
-          text-align: left;
-          padding: 14px 16px;
-          background: #f8f5ff;
-          font-weight: 700;
-          color: #0f172a;
-          border-bottom: 2px solid #ede7fb;
-        }
-        .comparison-table td {
-          padding: 12px 16px;
-          border-bottom: 1px solid #f0ebf8;
-          color: #475569;
-        }
-        .comparison-table .recommended {
-          background: #faf6ff;
-        }
-        .comparison-table .recommended td {
-          border-bottom-color: #ded1fb;
-        }
-        .comparison-table .rec-badge {
-          display: inline-block;
-          background: #6d28d9;
-          color: #fff;
-          font-size: 9px;
-          font-weight: 700;
-          padding: 2px 8px;
-          border-radius: 999px;
-          margin-left: 6px;
         }
 
         /* ---------- Apps grid ---------- */
@@ -1275,6 +1338,9 @@ export default function WindowsVPSPage() {
           .page-section {
             padding: 48px 20px;
           }
+          .tabs-section {
+            padding: 48px 20px;
+          }
           .features-grid-section {
             padding: 48px 20px;
           }
@@ -1290,9 +1356,6 @@ export default function WindowsVPSPage() {
           .apps-section {
             padding: 48px 20px;
           }
-          .comparison-section {
-            padding: 48px 20px;
-          }
           .faq-section {
             padding: 48px 20px;
           }
@@ -1305,6 +1368,9 @@ export default function WindowsVPSPage() {
           }
           .hp-hero-content p {
             font-size: 14px;
+          }
+          .tabs-head h2 {
+            font-size: 24px;
           }
           .plan-grid {
             grid-template-columns: 1fr;
@@ -1435,34 +1501,53 @@ export default function WindowsVPSPage() {
           </div>
         </section>
 
-        {/* ================= PRICING PLANS ================= */}
-        <section className="page-section" id="pricing" aria-labelledby="pricing-heading">
-          <div style={{ textAlign: 'center', maxWidth: '760px', margin: '0 auto' }}>
-            <span className="eyebrow" aria-hidden="true">Choose your plan</span>
-            <h2 id="pricing-heading" className="heading" style={{ fontSize: '32px', margin: '14px 0 10px' }}>
-              Windows VPS Hosting Plans
-            </h2>
+        {/* ================= PRICING WITH LOCATION TABS ================= */}
+        <section className="tabs-section" id="pricing" aria-labelledby="pricing-heading">
+          <div className="tabs-head">
+            <span className="eyebrow" aria-hidden="true">Pick your region</span>
+            <h2 id="pricing-heading" className="heading">Windows VPS Pricing by Location</h2>
             <p className="sub">
-              Select the perfect Windows VPS plan for your needs. All plans include full admin RDP access,
-              free Windows OS, and 24/7 expert support.
+              The same reliable Vynex Windows VPS infrastructure, deployed in the
+              datacenter closest to your users with FREE Windows OS included.
             </p>
           </div>
 
+          <div className="tabs-bar" role="tablist" aria-label="Select VPS location">
+            {LOCATION_TABS.map((tab) => (
+              <button
+                key={tab.key}
+                role="tab"
+                aria-selected={activeTab === tab.key}
+                aria-label={`${tab.label} Windows VPS hosting plans`}
+                className={`tab-btn ${activeTab === tab.key ? "active" : ""}`}
+                onClick={() => setActiveTab(tab.key)}
+              >
+                <img src={tab.icon} alt="" aria-hidden="true" />
+                {tab.label} VPS
+              </button>
+            ))}
+          </div>
+          <p className="tab-tagline">{active.tagline}</p>
+
           <div className="plan-grid">
-            {WINDOWS_PLANS.map((plan) => (
+            {active.plans.map((plan, i) => (
               <div
                 key={plan.name}
-                className={`plan-card ${plan.popular ? "popular" : ""}`}
+                className={`plan-card ${i === 2 ? "pro" : ""}`}
                 itemScope
                 itemType="https://schema.org/Product"
               >
-                {plan.popular && <span className="plan-badge">Most Popular</span>}
-                <div className="plan-name" itemProp="name">{plan.name}</div>
+                {i === 2 && <span className="plan-badge">Most Popular</span>}
+                <div className="plan-header">
+                  {plan.icon && (
+                    <Image src={plan.icon} alt="" width={24} height={24} />
+                  )}
+                  <div className="plan-name" itemProp="name">{plan.name}</div>
+                </div>
                 <div className="plan-specs">
                   <span>{plan.ram} RAM</span>
                   <span>{plan.cpu} Cores</span>
                   <span>{plan.storage} Storage</span>
-                  <span>{plan.bandwidth} Bandwidth</span>
                 </div>
                 <ul className="plan-features-list">
                   {plan.features.map((f) => (
@@ -1553,47 +1638,6 @@ export default function WindowsVPSPage() {
                 <div className="loc-sub">{loc.locations} Locations</div>
               </Link>
             ))}
-          </div>
-        </section>
-
-        {/* ================= COMPARISON TABLE ================= */}
-        <section className="comparison-section" aria-labelledby="comparison-heading">
-          <div style={{ textAlign: 'center', maxWidth: '760px', margin: '0 auto' }}>
-            <span className="eyebrow" aria-hidden="true">Compare Options</span>
-            <h2 id="comparison-heading" className="heading" style={{ fontSize: '30px', margin: '14px 0 10px' }}>
-              Is VPS Hosting Right for You? Compare Your Hosting Options
-            </h2>
-            <p className="sub">
-              Compare VPS hosting with other hosting options and choose the best solution for your needs.
-            </p>
-          </div>
-          <table className="comparison-table">
-            <thead>
-              <tr>
-                <th>Feature</th>
-                <th>Windows VPS Hosting <span className="rec-badge">Recommended</span></th>
-                <th>Managed VPS</th>
-                <th>Shared Hosting</th>
-                <th>Dedicated Server</th>
-              </tr>
-            </thead>
-            <tbody>
-              {COMPARISON_DATA.map((row, idx) => (
-                <tr key={idx} className={idx === 0 ? 'recommended' : ''}>
-                  <td><strong>{row.feature}</strong></td>
-                  <td>{row.vps}</td>
-                  <td>{row.managed}</td>
-                  <td>{row.shared}</td>
-                  <td>{row.dedicated}</td>
-                </tr>
-              ))}
-            </tbody>
-          </table>
-          <div style={{ textAlign: 'center', marginTop: '20px' }}>
-            <p className="sub" style={{ fontSize: '13px' }}>
-              Vynex.pk offers FREE Windows Server or Linux OS with every VPS. Looking for high-performance hardware? 
-              <Link href="/dedicated-servers" style={{ color: '#6d28d9', fontWeight: 600, textDecoration: 'none' }}> Dedicated Servers</Link>
-            </p>
           </div>
         </section>
 
