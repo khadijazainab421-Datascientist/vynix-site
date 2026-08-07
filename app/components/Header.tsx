@@ -76,12 +76,12 @@ const NAV_ITEMS: NavItem[] = [
     dropdown: [
       {
         icon: "/windows-server.svg",
-        label: "Windows Hosting",
+        label: "Windows VPS",
         href: "/vps/windows",
       },
       {
         icon: "/linux-server.svg",
-        label: "Linux Hosting",
+        label: "Linux VPS",
         href: "/vps/linux",
       },
       {
