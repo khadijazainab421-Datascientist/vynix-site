@@ -21,7 +21,7 @@ Vynix was created with one purpose:
 
 Every section is crafted with care, every transition is intentional, and every detail is designed to make someone smile.
 
-Because true love deserves more than ordinary words—it deserves something timeless.
+Because true love deserves more than ordinary words it deserves something timeless.
 
 ---
 
@@ -101,3 +101,5 @@ But real love stays online forever.
 **Made with infinite love, endless dreams, and a heart that will always choose you.**
 
 **— Forever Yours ❤️**
+
+**Hammad ❤️🌙**
