@@ -434,7 +434,6 @@ export default function GPUVPSPage() {
       </Head>
 
       <style jsx global>{`
-        /* ---------- Global ---------- */
         .page-section {
           padding: 80px 32px;
           max-width: 1280px;
@@ -466,7 +465,6 @@ export default function GPUVPSPage() {
           line-height: 1.7;
         }
 
-        /* ---------- HERO 3D ---------- */
         .hp-hero {
           position: relative;
           overflow: hidden;
@@ -588,7 +586,6 @@ export default function GPUVPSPage() {
           border-color: #c4b5fd;
         }
 
-        /* 3D Server Visual */
         .hp-hero-visual {
           display: flex;
           justify-content: center;
@@ -732,7 +729,6 @@ export default function GPUVPSPage() {
         .hp-server-badge.b2 { bottom: 35px; left: -25px; }
         .hp-server-badge.b3 { bottom: -8px; right: 15px; }
 
-        /* ---------- Features Grid ---------- */
         .features-grid-section {
           background: #ffffff;
           padding: 64px 32px;
@@ -782,7 +778,6 @@ export default function GPUVPSPage() {
           line-height: 1.6;
         }
 
-        /* ---------- Location tabs ---------- */
         .tabs-section {
           padding: 80px 32px;
           max-width: 1280px;
@@ -840,7 +835,6 @@ export default function GPUVPSPage() {
           margin: -28px 0 36px;
         }
 
-        /* ---------- Plan Cards ---------- */
         .plan-grid {
           display: grid;
           grid-template-columns: repeat(4, 1fr);
@@ -963,7 +957,6 @@ export default function GPUVPSPage() {
           background: #5b21b6;
         }
 
-        /* ---------- Plan Features ---------- */
         .plan-features-section {
           background: #faf8ff;
           padding: 64px 32px;
@@ -1013,7 +1006,6 @@ export default function GPUVPSPage() {
           line-height: 1.5;
         }
 
-        /* ---------- OS Section ---------- */
         .os-section {
           background: #ffffff;
           padding: 64px 32px;
@@ -1064,7 +1056,6 @@ export default function GPUVPSPage() {
           text-align: center;
         }
 
-        /* ---------- Locations Grid ---------- */
         .locations-section {
           padding: 64px 32px;
           max-width: 1280px;
@@ -1118,7 +1109,6 @@ export default function GPUVPSPage() {
           color: #94a3b8;
         }
 
-        /* ---------- GPU Apps grid ---------- */
         .gpu-apps-section {
           background: #faf8ff;
           padding: 64px 32px;
@@ -1181,7 +1171,6 @@ export default function GPUVPSPage() {
           line-height: 1.35;
         }
 
-        /* ---------- FAQ ---------- */
         .faq-section {
           max-width: 900px;
           margin: 0 auto;
@@ -1224,7 +1213,6 @@ export default function GPUVPSPage() {
           line-height: 1.7;
         }
 
-        /* ---------- Final CTA ---------- */
         .final-cta {
           max-width: 1280px;
           margin: 0 auto;
@@ -1400,7 +1388,6 @@ export default function GPUVPSPage() {
       <Header />
 
       <main>
-        {/* ================= HERO 3D ================= */}
         <section className="hp-hero" aria-labelledby="hero-heading">
           <div className="hp-hero-bg">
             <div className="orb orb-1" />
@@ -1421,11 +1408,7 @@ export default function GPUVPSPage() {
                 and more, powered by NVMe SSD storage and 24/7 expert support.
               </p>
               <div className="hp-hero-ctas">
-                <Link
-                  href="/contact"
-                  className="btn-primary"
-                  aria-label="Contact us for GPU VPS Hosting"
-                >
+                <Link href="/contact" className="btn-primary">
                   <Rocket size={16} aria-hidden="true" />
                   Contact for Pricing
                 </Link>
@@ -1470,9 +1453,8 @@ export default function GPUVPSPage() {
           </div>
         </section>
 
-        {/* ================= FEATURES ================= */}
-        <section className="features-grid-section" aria-labelledby="features-heading">
-          <h2 id="features-heading" className="sr-only">Features</h2>
+        <section className="features-grid-section">
+          <h2 className="sr-only">Features</h2>
           <div className="features-grid">
             {FEATURES.map((feature) => (
               <div key={feature.title} className="feature-card">
@@ -1486,24 +1468,22 @@ export default function GPUVPSPage() {
           </div>
         </section>
 
-        {/* ================= PRICING WITH LOCATION TABS ================= */}
-        <section className="tabs-section" id="pricing" aria-labelledby="pricing-heading">
+        <section className="tabs-section" id="pricing">
           <div className="tabs-head">
             <span className="eyebrow" aria-hidden="true">Pick your region</span>
-            <h2 id="pricing-heading" className="heading">GPU VPS Pricing by Location</h2>
+            <h2 className="heading">GPU VPS Pricing by Location</h2>
             <p className="sub">
               The same reliable Vynex GPU VPS infrastructure, deployed in the
               datacenter closest to your users with dedicated NVIDIA GPUs included.
             </p>
           </div>
 
-          <div className="tabs-bar" role="tablist" aria-label="Select VPS location">
+          <div className="tabs-bar" role="tablist">
             {LOCATION_TABS.map((tab) => (
               <button
                 key={tab.key}
                 role="tab"
                 aria-selected={activeTab === tab.key}
-                aria-label={`${tab.label} GPU VPS hosting plans`}
                 className={`tab-btn ${activeTab === tab.key ? "active" : ""}`}
                 onClick={() => setActiveTab(tab.key)}
               >
@@ -1516,18 +1496,11 @@ export default function GPUVPSPage() {
 
           <div className="plan-grid">
             {active.plans.map((plan, i) => (
-              <div
-                key={plan.name}
-                className={`plan-card ${i === 2 ? "pro" : ""}`}
-                itemScope
-                itemType="https://schema.org/Product"
-              >
+              <div key={plan.name} className={`plan-card ${i === 2 ? "pro" : ""}`}>
                 {i === 2 && <span className="plan-badge">Most Popular</span>}
                 <div className="plan-header">
-                  {plan.icon && (
-                    <Image src={plan.icon} alt="" width={24} height={24} />
-                  )}
-                  <div className="plan-name" itemProp="name">{plan.name}</div>
+                  {plan.icon && <Image src={plan.icon} alt="" width={24} height={24} />}
+                  <div className="plan-name">{plan.name}</div>
                 </div>
                 <div className="plan-specs">
                   <span>{plan.ram} RAM</span>
@@ -1542,16 +1515,11 @@ export default function GPUVPSPage() {
                     </li>
                   ))}
                 </ul>
-                <div className="plan-price" itemProp="offers" itemScope itemType="https://schema.org/Offer">
-                  <span itemProp="price">{plan.price}</span>
-                  <meta itemProp="priceCurrency" content="PKR" />
+                <div className="plan-price">
+                  <span>{plan.price}</span>
                 </div>
                 <div className="plan-price-sub">Contact for Pricing</div>
-                <Link
-                  href="/contact"
-                  className="plan-cta"
-                  aria-label={`Contact us for ${plan.name} pricing`}
-                >
+                <Link href="/contact" className="plan-cta">
                   Contact Us
                 </Link>
               </div>
@@ -1559,11 +1527,10 @@ export default function GPUVPSPage() {
           </div>
         </section>
 
-        {/* ================= PLAN FEATURES ================= */}
-        <section className="plan-features-section" aria-labelledby="plan-features-heading">
+        <section className="plan-features-section">
           <div style={{ textAlign: 'center', maxWidth: '760px', margin: '0 auto' }}>
             <span className="eyebrow" aria-hidden="true">Enterprise Features</span>
-            <h2 id="plan-features-heading" className="heading" style={{ fontSize: '30px', margin: '14px 0 10px' }}>
+            <h2 className="heading" style={{ fontSize: '30px', margin: '14px 0 10px' }}>
               All GPU VPS Plans Include
             </h2>
             <p className="sub">
@@ -1584,11 +1551,10 @@ export default function GPUVPSPage() {
           </div>
         </section>
 
-        {/* ================= OS SECTION ================= */}
-        <section className="os-section" id="os" aria-labelledby="os-heading">
+        <section className="os-section" id="os">
           <div className="os-head">
             <span className="eyebrow" aria-hidden="true">Operating Systems</span>
-            <h2 id="os-heading" className="heading">Available Operating Systems</h2>
+            <h2 className="heading">Available Operating Systems</h2>
             <p className="sub">
               Choose from popular operating systems for your GPU VPS hosting.
             </p>
@@ -1603,11 +1569,10 @@ export default function GPUVPSPage() {
           </div>
         </section>
 
-        {/* ================= GLOBAL LOCATIONS ================= */}
-        <section className="locations-section" aria-labelledby="locations-heading">
+        <section className="locations-section">
           <div className="locations-head">
             <span className="eyebrow" aria-hidden="true">Global Presence</span>
-            <h2 id="locations-heading" className="heading">Vynex's Global VPS Locations</h2>
+            <h2 className="heading">Vynex's Global VPS Locations</h2>
             <p className="sub">
               Check Our Other VPS Locations — Deploy your GPU VPS in the nearest location
               for maximum speed, uptime, and performance.
@@ -1624,13 +1589,10 @@ export default function GPUVPSPage() {
           </div>
         </section>
 
-        {/* ================= GPU APPLICATIONS ================= */}
-        <section className="gpu-apps-section" aria-labelledby="gpu-apps-heading">
+        <section className="gpu-apps-section">
           <div className="gpu-apps-head">
             <span className="eyebrow" aria-hidden="true">GPU Optimized</span>
-            <h2 id="gpu-apps-heading" className="heading">
-              GPU-Powered Applications
-            </h2>
+            <h2 className="heading">GPU-Powered Applications</h2>
             <p className="sub">
               Run compute-intensive workloads with dedicated GPU acceleration.
               Perfect for AI/ML training, deep learning, video rendering, and more.
@@ -1648,11 +1610,10 @@ export default function GPUVPSPage() {
           </div>
         </section>
 
-        {/* ================= FAQ ================= */}
-        <section className="faq-section" aria-labelledby="faq-heading">
+        <section className="faq-section">
           <div className="faq-head">
             <span className="eyebrow" aria-hidden="true">Questions & Answers</span>
-            <h2 id="faq-heading" className="heading">Frequently Asked Questions</h2>
+            <h2 className="heading">Frequently Asked Questions</h2>
           </div>
           {FAQS.map((faq, idx) => (
             <details key={idx} className="faq-item">
@@ -1665,21 +1626,16 @@ export default function GPUVPSPage() {
           ))}
         </section>
 
-        {/* ================= FINAL CTA ================= */}
-        <section className="final-cta" aria-labelledby="cta-heading">
+        <section className="final-cta">
           <div className="final-card">
             <div>
-              <h2 id="cta-heading">Ready to Deploy Your GPU VPS?</h2>
+              <h2>Ready to Deploy Your GPU VPS?</h2>
               <p>
                 Get started with high-performance GPU VPS hosting today. 
                 Dedicated NVIDIA GPUs, NVMe SSD, and 24/7 support included.
               </p>
             </div>
-            <Link
-              href="/contact"
-              className="final-btn"
-              aria-label="Contact us for GPU VPS pricing"
-            >
+            <Link href="/contact" className="final-btn">
               Contact for Pricing <ArrowRight size={15} aria-hidden="true" />
             </Link>
           </div>
