@@ -42,10 +42,6 @@ import {
   Gauge,
   Award,
   PanelLeft,
-  Cloud,
-  Code,
-  Lock,
-  RefreshCw,
 } from "lucide-react";
 
 /* ------------------------------------------------------------------ */
@@ -231,12 +227,12 @@ const FEATURES = [
   {
     icon: Server,
     title: "KVM Virtualization",
-    description: "Full hardware virtualization with dedicated resources for maximum performance and isolation.",
+    description: "Full hardware virtualization with dedicated resources for maximum performance.",
   },
   {
     icon: ShieldCheck,
-    title: "Root Access",
-    description: "Full root access to your Linux VPS for complete control over your server environment.",
+    title: "Full Root Access",
+    description: "Complete root access to your Linux VPS for full control and customization.",
   },
   {
     icon: Terminal,
@@ -487,9 +483,9 @@ export default function LinuxVPSPage() {
         .hp-hero {
           position: relative;
           overflow: hidden;
-          background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 50%, #dbeafe 100%);
+          background: linear-gradient(135deg, #faf8ff 0%, #f0ebf8 50%, #e8e0f5 100%);
           padding: 120px 32px 70px;
-          border-bottom: 1px solid #dbeafe;
+          border-bottom: 1px solid #e8e0f5;
           min-height: 60vh;
         }
         .hp-hero-bg {
@@ -507,14 +503,14 @@ export default function LinuxVPSPage() {
         .hp-hero-bg .orb-1 {
           width: 500px;
           height: 500px;
-          background: #2563eb;
+          background: #6d28d9;
           top: -150px;
           right: -80px;
         }
         .hp-hero-bg .orb-2 {
           width: 350px;
           height: 350px;
-          background: #3b82f6;
+          background: #7c3aed;
           bottom: -120px;
           left: -80px;
           opacity: 0.2;
@@ -523,8 +519,8 @@ export default function LinuxVPSPage() {
           position: absolute;
           inset: 0;
           background-image: 
-            linear-gradient(rgba(37,99,235,0.04) 1px, transparent 1px),
-            linear-gradient(90deg, rgba(37,99,235,0.04) 1px, transparent 1px);
+            linear-gradient(rgba(109,40,217,0.04) 1px, transparent 1px),
+            linear-gradient(90deg, rgba(109,40,217,0.04) 1px, transparent 1px);
           background-size: 50px 50px;
         }
 
@@ -551,7 +547,7 @@ export default function LinuxVPSPage() {
           margin: 0;
         }
         .hp-hero-content h1 span {
-          background: linear-gradient(135deg, #2563eb, #3b82f6);
+          background: linear-gradient(135deg, #6d28d9, #7c3aed);
           -webkit-background-clip: text;
           -webkit-text-fill-color: transparent;
         }
@@ -572,19 +568,19 @@ export default function LinuxVPSPage() {
           display: inline-flex;
           align-items: center;
           gap: 8px;
-          background: linear-gradient(135deg, #2563eb, #3b82f6);
+          background: linear-gradient(135deg, #6d28d9, #7c3aed);
           color: #fff;
           font-weight: 700;
           font-size: 14px;
           padding: 13px 26px;
           border-radius: 12px;
           text-decoration: none;
-          box-shadow: 0 12px 35px rgba(37, 99, 235, 0.3);
+          box-shadow: 0 12px 35px rgba(109, 40, 217, 0.3);
           transition: transform 0.15s ease, box-shadow 0.15s ease;
         }
         .btn-primary:hover {
           transform: translateY(-2px);
-          box-shadow: 0 16px 40px rgba(37, 99, 235, 0.4);
+          box-shadow: 0 16px 40px rgba(109, 40, 217, 0.4);
         }
         .btn-secondary {
           display: inline-flex;
@@ -597,12 +593,12 @@ export default function LinuxVPSPage() {
           padding: 13px 26px;
           border-radius: 12px;
           text-decoration: none;
-          border: 1.5px solid #dbeafe;
+          border: 1.5px solid #e5e0f5;
           transition: background 0.15s ease, border-color 0.15s ease;
         }
         .btn-secondary:hover {
-          background: #f0f9ff;
-          border-color: #93c5fd;
+          background: #f8f5ff;
+          border-color: #c4b5fd;
         }
 
         /* 3D Server Visual */
@@ -626,11 +622,11 @@ export default function LinuxVPSPage() {
         .hp-server-body {
           position: absolute;
           inset: 0;
-          background: linear-gradient(145deg, #1e293b, #334155);
+          background: linear-gradient(145deg, #1a365d, #2b6cb0);
           border-radius: 20px;
-          border: 1px solid rgba(148, 163, 184, 0.3);
+          border: 1px solid rgba(99, 179, 237, 0.3);
           box-shadow: 
-            0 30px 80px rgba(30, 41, 59, 0.25),
+            0 30px 80px rgba(43, 108, 176, 0.25),
             inset 0 1px 0 rgba(255,255,255,0.08);
           padding: 24px 20px 20px;
           transform: translateZ(20px);
@@ -672,12 +668,12 @@ export default function LinuxVPSPage() {
           height: 7px;
           margin-bottom: 6px;
           border-radius: 4px;
-          background: rgba(148, 163, 184, 0.15);
+          background: rgba(99, 179, 237, 0.15);
           position: relative;
           overflow: hidden;
         }
         .hp-server-blade:nth-child(odd) {
-          background: rgba(148, 163, 184, 0.25);
+          background: rgba(99, 179, 237, 0.25);
         }
         .hp-server-blade .glow {
           position: absolute;
@@ -707,7 +703,7 @@ export default function LinuxVPSPage() {
           gap: 14px;
           margin-top: 10px;
           padding-top: 10px;
-          border-top: 1px solid rgba(148, 163, 184, 0.1);
+          border-top: 1px solid rgba(99, 179, 237, 0.1);
         }
         .hp-server-footer span {
           color: rgba(255,255,255,0.35);
@@ -734,9 +730,9 @@ export default function LinuxVPSPage() {
           border-radius: 8px;
           font-size: 10px;
           font-weight: 700;
-          color: #1e293b;
-          box-shadow: 0 8px 30px rgba(30, 41, 59, 0.12);
-          border: 1px solid #e2e8f0;
+          color: #2b6cb0;
+          box-shadow: 0 8px 30px rgba(43, 108, 176, 0.12);
+          border: 1px solid #bee3f8;
           display: flex;
           align-items: center;
           gap: 5px;
@@ -751,7 +747,7 @@ export default function LinuxVPSPage() {
         .features-grid-section {
           background: #ffffff;
           padding: 64px 32px;
-          border-bottom: 1px solid #f0f4f8;
+          border-bottom: 1px solid #f0ebf8;
         }
         .features-grid {
           display: grid;
@@ -764,24 +760,24 @@ export default function LinuxVPSPage() {
           text-align: center;
           padding: 28px 20px;
           border-radius: 16px;
-          background: #f8fafc;
-          border: 1px solid #f0f4f8;
+          background: #faf8ff;
+          border: 1px solid #f0ebf8;
           transition: transform 0.2s ease, box-shadow 0.2s ease;
         }
         .feature-card:hover {
           transform: translateY(-4px);
-          box-shadow: 0 12px 40px rgba(37, 99, 235, 0.08);
-          border-color: #bfdbfe;
+          box-shadow: 0 12px 40px rgba(109, 40, 217, 0.08);
+          border-color: #ded1fb;
         }
         .feature-card .icon-wrap {
           width: 52px;
           height: 52px;
           border-radius: 14px;
-          background: linear-gradient(135deg, #dbeafe, #bfdbfe);
+          background: linear-gradient(135deg, #ede9fe, #ddd6fe);
           display: flex;
           align-items: center;
           justify-content: center;
-          color: #2563eb;
+          color: #6d28d9;
           margin: 0 auto 12px;
         }
         .feature-card h3 {
@@ -825,7 +821,7 @@ export default function LinuxVPSPage() {
           gap: 10px;
           padding: 10px 20px;
           border-radius: 999px;
-          border: 1px solid #f0f4f8;
+          border: 1px solid #f0ebf8;
           background: #fff;
           font-size: 13px;
           font-weight: 700;
@@ -839,14 +835,14 @@ export default function LinuxVPSPage() {
           object-fit: contain;
         }
         .tab-btn:hover {
-          border-color: #bfdbfe;
-          color: #2563eb;
+          border-color: #ded1fb;
+          color: #6d28d9;
         }
         .tab-btn.active {
-          background: #2563eb;
-          border-color: #2563eb;
+          background: #6d28d9;
+          border-color: #6d28d9;
           color: #fff;
-          box-shadow: 0 8px 20px rgba(37, 99, 235, 0.25);
+          box-shadow: 0 8px 20px rgba(109, 40, 217, 0.25);
         }
         .tab-tagline {
           text-align: center;
@@ -862,7 +858,7 @@ export default function LinuxVPSPage() {
           gap: 20px;
         }
         .plan-card {
-          border: 1px solid #f0f4f8;
+          border: 1px solid #f0ebf8;
           border-radius: 16px;
           padding: 24px 20px;
           background: #fff;
@@ -871,19 +867,19 @@ export default function LinuxVPSPage() {
           transition: border-color 0.15s ease, transform 0.15s ease;
         }
         .plan-card:hover {
-          border-color: #bfdbfe;
+          border-color: #ded1fb;
           transform: translateY(-3px);
         }
         .plan-card.pro {
-          border-color: #2563eb;
-          background: linear-gradient(180deg, #eff6ff 0%, #ffffff 40%);
+          border-color: #6d28d9;
+          background: linear-gradient(180deg, #faf6ff 0%, #ffffff 40%);
           position: relative;
         }
         .plan-badge {
           position: absolute;
           top: -12px;
           left: 22px;
-          background: #2563eb;
+          background: #6d28d9;
           color: #fff;
           font-size: 10px;
           font-weight: 700;
@@ -914,7 +910,7 @@ export default function LinuxVPSPage() {
           gap: 6px;
           margin-bottom: 14px;
           padding-bottom: 14px;
-          border-bottom: 1px dashed #e2e8f0;
+          border-bottom: 1px dashed #ede7fb;
         }
         .plan-specs span {
           font-size: 13px;
@@ -939,7 +935,7 @@ export default function LinuxVPSPage() {
           font-weight: 500;
         }
         .plan-features-list li svg {
-          color: #2563eb;
+          color: #6d28d9;
           min-width: 15px;
         }
         .plan-price {
@@ -968,28 +964,28 @@ export default function LinuxVPSPage() {
           font-size: 13px;
           font-weight: 700;
           text-decoration: none;
-          border: 1px solid #2563eb;
-          color: #2563eb;
+          border: 1px solid #6d28d9;
+          color: #6d28d9;
           transition: all 0.15s ease;
         }
         .plan-cta:hover {
-          background: #2563eb;
+          background: #6d28d9;
           color: #fff;
         }
         .plan-card.pro .plan-cta {
-          background: #2563eb;
+          background: #6d28d9;
           color: #fff;
         }
         .plan-card.pro .plan-cta:hover {
-          background: #1d4ed8;
+          background: #5b21b6;
         }
 
         /* ---------- Plan Features ---------- */
         .plan-features-section {
-          background: #f8fafc;
+          background: #faf8ff;
           padding: 64px 32px;
-          border-top: 1px solid #f0f4f8;
-          border-bottom: 1px solid #f0f4f8;
+          border-top: 1px solid #f0ebf8;
+          border-bottom: 1px solid #f0ebf8;
         }
         .plan-features-grid {
           display: grid;
@@ -1000,22 +996,22 @@ export default function LinuxVPSPage() {
         }
         .plan-feature-card {
           background: #fff;
-          border: 1px solid #f0f4f8;
+          border: 1px solid #f0ebf8;
           border-radius: 12px;
           padding: 20px;
           transition: all 0.15s ease;
         }
         .plan-feature-card:hover {
-          border-color: #bfdbfe;
+          border-color: #ded1fb;
           transform: translateY(-2px);
-          box-shadow: 0 8px 24px rgba(37, 99, 235, 0.06);
+          box-shadow: 0 8px 24px rgba(109, 40, 217, 0.06);
         }
         .plan-feature-card .icon {
           width: 40px;
           height: 40px;
           border-radius: 10px;
-          background: #eff6ff;
-          color: #2563eb;
+          background: #f8f5ff;
+          color: #6d28d9;
           display: flex;
           align-items: center;
           justify-content: center;
@@ -1038,7 +1034,7 @@ export default function LinuxVPSPage() {
         .os-section {
           background: #ffffff;
           padding: 64px 32px;
-          border-bottom: 1px solid #f0f4f8;
+          border-bottom: 1px solid #f0ebf8;
         }
         .os-head {
           max-width: 760px;
@@ -1062,16 +1058,16 @@ export default function LinuxVPSPage() {
           align-items: center;
           gap: 10px;
           background: #fff;
-          border: 1px solid #f0f4f8;
+          border: 1px solid #f0ebf8;
           border-radius: 12px;
           padding: 20px 12px;
           text-decoration: none;
           transition: all 0.15s ease;
         }
         .os-item:hover {
-          border-color: #2563eb;
+          border-color: #6d28d9;
           transform: translateY(-2px);
-          box-shadow: 0 8px 24px rgba(37, 99, 235, 0.08);
+          box-shadow: 0 8px 24px rgba(109, 40, 217, 0.08);
         }
         .os-item img {
           width: 36px;
@@ -1112,16 +1108,16 @@ export default function LinuxVPSPage() {
           gap: 8px;
           text-align: center;
           background: #fff;
-          border: 1px solid #f0f4f8;
+          border: 1px solid #f0ebf8;
           border-radius: 12px;
           padding: 16px 10px;
           text-decoration: none;
           transition: all 0.15s ease;
         }
         .location-item:hover {
-          border-color: #2563eb;
+          border-color: #6d28d9;
           transform: translateY(-3px);
-          box-shadow: 0 8px 24px rgba(37, 99, 235, 0.08);
+          box-shadow: 0 8px 24px rgba(109, 40, 217, 0.08);
         }
         .location-item img {
           width: 28px;
@@ -1141,10 +1137,10 @@ export default function LinuxVPSPage() {
 
         /* ---------- Apps grid ---------- */
         .apps-section {
-          background: #f8fafc;
+          background: #faf8ff;
           padding: 64px 32px;
-          border-top: 1px solid #f0f4f8;
-          border-bottom: 1px solid #f0f4f8;
+          border-top: 1px solid #f0ebf8;
+          border-bottom: 1px solid #f0ebf8;
         }
         .apps-head {
           max-width: 760px;
@@ -1169,22 +1165,22 @@ export default function LinuxVPSPage() {
           gap: 10px;
           text-align: center;
           background: #fff;
-          border: 1px solid #f0f4f8;
+          border: 1px solid #f0ebf8;
           border-radius: 14px;
           padding: 18px 12px;
           text-decoration: none;
           transition: all 0.15s ease;
         }
         .app-item:hover {
-          border-color: #2563eb;
+          border-color: #6d28d9;
           transform: translateY(-3px);
-          box-shadow: 0 12px 28px rgba(37, 99, 235, 0.1);
+          box-shadow: 0 12px 28px rgba(109, 40, 217, 0.1);
         }
         .app-icon {
           width: 40px;
           height: 40px;
           border-radius: 10px;
-          background: #eff6ff;
+          background: #f8f5ff;
           display: flex;
           align-items: center;
           justify-content: center;
@@ -1217,7 +1213,7 @@ export default function LinuxVPSPage() {
           margin: 14px 0 10px;
         }
         .faq-item {
-          border-bottom: 1px solid #f0f4f8;
+          border-bottom: 1px solid #f0ebf8;
           padding: 16px 0;
         }
         .faq-question {
@@ -1236,7 +1232,7 @@ export default function LinuxVPSPage() {
           font-family: "Inter", sans-serif;
         }
         .faq-question:hover {
-          color: #2563eb;
+          color: #6d28d9;
         }
         .faq-answer {
           margin-top: 8px;
@@ -1252,7 +1248,7 @@ export default function LinuxVPSPage() {
           padding: 80px 32px;
         }
         .final-card {
-          background: linear-gradient(120deg, #1e293b 0%, #0f172a 100%);
+          background: linear-gradient(120deg, #2b6cb0 0%, #1a365d 100%);
           border-radius: 24px;
           padding: 56px 48px;
           display: flex;
@@ -1292,7 +1288,7 @@ export default function LinuxVPSPage() {
           align-items: center;
           gap: 8px;
           background: #fff;
-          color: #1e293b;
+          color: #2b6cb0;
           font-weight: 700;
           font-size: 14px;
           padding: 13px 24px;
@@ -1486,7 +1482,7 @@ export default function LinuxVPSPage() {
                   <Terminal size={11} /> Root Access
                 </div>
                 <div className="hp-server-badge b3">
-                  <Cloud size={11} /> Linux OS
+                  <Globe size={11} /> Linux OS
                 </div>
               </div>
             </div>
@@ -1683,7 +1679,7 @@ export default function LinuxVPSPage() {
             <details key={idx} className="faq-item">
               <summary className="faq-question">
                 {faq.q}
-                <ChevronDown size={18} style={{ color: '#2563eb' }} />
+                <ChevronDown size={18} style={{ color: '#6d28d9' }} />
               </summary>
               <div className="faq-answer">{faq.a}</div>
             </details>
