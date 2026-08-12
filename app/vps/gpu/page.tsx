@@ -1436,8 +1436,7 @@ export default function GPUVPSPage() {
                   <div className="hp-server-footer">
                     <span><span className="dot green" /> NVIDIA</span>
                     <span><span className="dot purple" /> CUDA</span>
-                    <span style={{ marginLeft: 'auto' }}><span className="dot blue" /> AI</span></span>
-                  </div>
+<span style={{ marginLeft: 'auto' }}><span className="dot blue" /> AI</span>                  </div>
                 </div>
                 <div className="hp-server-badge b1">
                   <Zap size={11} /> NVMe SSD
