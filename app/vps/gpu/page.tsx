@@ -937,12 +937,6 @@ export default function GPUVPSPage() {
           color: #0f172a;
           margin-bottom: 2px;
         }
-        .plan-price sup {
-          font-size: 12px;
-          font-weight: 700;
-          color: #94a3b8;
-          margin-right: 2px;
-        }
         .plan-price-sub {
           font-size: 11px;
           color: #94a3b8;
@@ -1431,14 +1425,14 @@ export default function GPUVPSPage() {
                 and more, powered by NVMe SSD storage and 24/7 expert support.
               </p>
               <div className="hp-hero-ctas">
-                <a
+                <Link
                   href="/contact"
                   className="btn-primary"
                   aria-label="Contact us for GPU VPS Hosting"
                 >
                   <Rocket size={16} aria-hidden="true" />
                   Contact for Pricing
-                </a>
+                </Link>
                 <Link href="#pricing" className="btn-secondary">
                   View Plans <ArrowRight size={15} aria-hidden="true" />
                 </Link>
