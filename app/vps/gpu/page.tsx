@@ -434,6 +434,7 @@ export default function GPUVPSPage() {
       </Head>
 
       <style jsx global>{`
+        /* ---------- Global ---------- */
         .page-section {
           padding: 80px 32px;
           max-width: 1280px;
@@ -465,6 +466,7 @@ export default function GPUVPSPage() {
           line-height: 1.7;
         }
 
+        /* ---------- HERO 3D ---------- */
         .hp-hero {
           position: relative;
           overflow: hidden;
@@ -586,6 +588,7 @@ export default function GPUVPSPage() {
           border-color: #c4b5fd;
         }
 
+        /* 3D Server Visual */
         .hp-hero-visual {
           display: flex;
           justify-content: center;
@@ -729,6 +732,7 @@ export default function GPUVPSPage() {
         .hp-server-badge.b2 { bottom: 35px; left: -25px; }
         .hp-server-badge.b3 { bottom: -8px; right: 15px; }
 
+        /* ---------- Features Grid ---------- */
         .features-grid-section {
           background: #ffffff;
           padding: 64px 32px;
@@ -778,6 +782,7 @@ export default function GPUVPSPage() {
           line-height: 1.6;
         }
 
+        /* ---------- Location tabs ---------- */
         .tabs-section {
           padding: 80px 32px;
           max-width: 1280px;
@@ -835,6 +840,7 @@ export default function GPUVPSPage() {
           margin: -28px 0 36px;
         }
 
+        /* ---------- Plan Cards ---------- */
         .plan-grid {
           display: grid;
           grid-template-columns: repeat(4, 1fr);
@@ -957,6 +963,7 @@ export default function GPUVPSPage() {
           background: #5b21b6;
         }
 
+        /* ---------- Plan Features ---------- */
         .plan-features-section {
           background: #faf8ff;
           padding: 64px 32px;
@@ -1006,6 +1013,7 @@ export default function GPUVPSPage() {
           line-height: 1.5;
         }
 
+        /* ---------- OS Section ---------- */
         .os-section {
           background: #ffffff;
           padding: 64px 32px;
@@ -1056,6 +1064,7 @@ export default function GPUVPSPage() {
           text-align: center;
         }
 
+        /* ---------- Locations Grid ---------- */
         .locations-section {
           padding: 64px 32px;
           max-width: 1280px;
@@ -1109,6 +1118,7 @@ export default function GPUVPSPage() {
           color: #94a3b8;
         }
 
+        /* ---------- GPU Apps grid ---------- */
         .gpu-apps-section {
           background: #faf8ff;
           padding: 64px 32px;
@@ -1171,6 +1181,7 @@ export default function GPUVPSPage() {
           line-height: 1.35;
         }
 
+        /* ---------- FAQ ---------- */
         .faq-section {
           max-width: 900px;
           margin: 0 auto;
@@ -1213,6 +1224,7 @@ export default function GPUVPSPage() {
           line-height: 1.7;
         }
 
+        /* ---------- Final CTA ---------- */
         .final-cta {
           max-width: 1280px;
           margin: 0 auto;
@@ -1388,6 +1400,7 @@ export default function GPUVPSPage() {
       <Header />
 
       <main>
+        {/* ================= HERO 3D ================= */}
         <section className="hp-hero" aria-labelledby="hero-heading">
           <div className="hp-hero-bg">
             <div className="orb orb-1" />
@@ -1457,6 +1470,7 @@ export default function GPUVPSPage() {
           </div>
         </section>
 
+        {/* ================= FEATURES ================= */}
         <section className="features-grid-section" aria-labelledby="features-heading">
           <h2 id="features-heading" className="sr-only">Features</h2>
           <div className="features-grid">
@@ -1472,6 +1486,7 @@ export default function GPUVPSPage() {
           </div>
         </section>
 
+        {/* ================= PRICING WITH LOCATION TABS ================= */}
         <section className="tabs-section" id="pricing" aria-labelledby="pricing-heading">
           <div className="tabs-head">
             <span className="eyebrow" aria-hidden="true">Pick your region</span>
@@ -1544,6 +1559,7 @@ export default function GPUVPSPage() {
           </div>
         </section>
 
+        {/* ================= PLAN FEATURES ================= */}
         <section className="plan-features-section" aria-labelledby="plan-features-heading">
           <div style={{ textAlign: 'center', maxWidth: '760px', margin: '0 auto' }}>
             <span className="eyebrow" aria-hidden="true">Enterprise Features</span>
@@ -1568,6 +1584,7 @@ export default function GPUVPSPage() {
           </div>
         </section>
 
+        {/* ================= OS SECTION ================= */}
         <section className="os-section" id="os" aria-labelledby="os-heading">
           <div className="os-head">
             <span className="eyebrow" aria-hidden="true">Operating Systems</span>
@@ -1586,6 +1603,7 @@ export default function GPUVPSPage() {
           </div>
         </section>
 
+        {/* ================= GLOBAL LOCATIONS ================= */}
         <section className="locations-section" aria-labelledby="locations-heading">
           <div className="locations-head">
             <span className="eyebrow" aria-hidden="true">Global Presence</span>
@@ -1606,6 +1624,7 @@ export default function GPUVPSPage() {
           </div>
         </section>
 
+        {/* ================= GPU APPLICATIONS ================= */}
         <section className="gpu-apps-section" aria-labelledby="gpu-apps-heading">
           <div className="gpu-apps-head">
             <span className="eyebrow" aria-hidden="true">GPU Optimized</span>
@@ -1629,6 +1648,7 @@ export default function GPUVPSPage() {
           </div>
         </section>
 
+        {/* ================= FAQ ================= */}
         <section className="faq-section" aria-labelledby="faq-heading">
           <div className="faq-head">
             <span className="eyebrow" aria-hidden="true">Questions & Answers</span>
@@ -1645,6 +1665,7 @@ export default function GPUVPSPage() {
           ))}
         </section>
 
+        {/* ================= FINAL CTA ================= */}
         <section className="final-cta" aria-labelledby="cta-heading">
           <div className="final-card">
             <div>
