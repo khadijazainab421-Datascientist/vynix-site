@@ -232,24 +232,24 @@ const LOCATION_TABS: LocationTab[] = [
 
 const FEATURES = [
   {
-    icon: MonitorSmartphone,
-    title: "Full Admin RDP Access",
-    description: "Complete administrator access to your Windows Server with Remote Desktop Protocol.",
+    icon: Server,
+    title: "KVM Virtualization",
+    description: "Full hardware virtualization with dedicated resources for maximum performance.",
   },
   {
     icon: ShieldCheck,
-    title: "Windows Server 2022",
-    description: "Latest Windows Server 2022 with enhanced security and performance features.",
+    title: "Free Windows OS",
+    description: "Choose between Windows Server or Windows OS at no additional cost.",
   },
   {
-    icon: Lock,
-    title: "Secure Connection",
-    description: "Encrypted RDP connections with firewall protection and DDoS mitigation.",
+    icon: MonitorSmartphone,
+    title: "Full Admin RDP Access",
+    description: "Complete administrator RDP access to install any Windows-compatible software.",
   },
   {
     icon: Globe,
-    title: "Dedicated IPv4 Address",
-    description: "Each RDP comes with a dedicated IPv4 address for direct remote access.",
+    title: "Dedicated IP",
+    description: "Each RDP comes with a genuine dedicated IPv4 address.",
   },
   {
     icon: Zap,
@@ -267,12 +267,12 @@ const PLAN_FEATURES = [
   {
     icon: MonitorSmartphone,
     title: "Full Admin RDP Access",
-    description: "Complete administrator access to your Windows Server with full control over the system.",
+    description: "Complete control of your Windows RDP with full administrator access.",
   },
   {
     icon: Cpu,
     title: "Dedicated Resources",
-    description: "Guaranteed CPU, RAM, and storage exclusively allocated to your RDP.",
+    description: "Guaranteed CPU, RAM, and storage exclusively allocated to your Windows RDP.",
   },
   {
     icon: Zap,
@@ -292,12 +292,12 @@ const PLAN_FEATURES = [
   {
     icon: HeadphonesIcon,
     title: "24/7 Expert Support",
-    description: "24/7 technical support via WhatsApp and tickets for Windows RDP issues.",
+    description: "24/7 technical support via WhatsApp and tickets, available for both local and international customers.",
   },
   {
     icon: ShieldCheck,
     title: "Secure Environment",
-    description: "Firewall-protected, isolated, and hardened Windows Server with built-in security.",
+    description: "Firewall-protected, isolated, and hardened RDP hosting with built-in DDoS protection.",
   },
   {
     icon: Globe,
@@ -499,9 +499,9 @@ export default function WindowsRDPPage() {
           font-weight: 700;
           letter-spacing: 0.8px;
           text-transform: uppercase;
-          color: #2563eb;
-          background: #eff6ff;
-          border: 1px solid #dbeafe;
+          color: #6d28d9;
+          background: #f8f5ff;
+          border: 1px solid #eee5ff;
           padding: 5px 14px;
           border-radius: 999px;
         }
@@ -521,9 +521,9 @@ export default function WindowsRDPPage() {
         .hp-hero {
           position: relative;
           overflow: hidden;
-          background: linear-gradient(135deg, #eff6ff 0%, #dbeafe 50%, #bfdbfe 100%);
+          background: linear-gradient(135deg, #faf8ff 0%, #f0ebf8 50%, #e8e0f5 100%);
           padding: 120px 32px 70px;
-          border-bottom: 1px solid #dbeafe;
+          border-bottom: 1px solid #e8e0f5;
           min-height: 60vh;
         }
         .hp-hero-bg {
@@ -541,14 +541,14 @@ export default function WindowsRDPPage() {
         .hp-hero-bg .orb-1 {
           width: 500px;
           height: 500px;
-          background: #2563eb;
+          background: #6d28d9;
           top: -150px;
           right: -80px;
         }
         .hp-hero-bg .orb-2 {
           width: 350px;
           height: 350px;
-          background: #3b82f6;
+          background: #7c3aed;
           bottom: -120px;
           left: -80px;
           opacity: 0.2;
@@ -557,8 +557,8 @@ export default function WindowsRDPPage() {
           position: absolute;
           inset: 0;
           background-image: 
-            linear-gradient(rgba(37,99,235,0.04) 1px, transparent 1px),
-            linear-gradient(90deg, rgba(37,99,235,0.04) 1px, transparent 1px);
+            linear-gradient(rgba(109,40,217,0.04) 1px, transparent 1px),
+            linear-gradient(90deg, rgba(109,40,217,0.04) 1px, transparent 1px);
           background-size: 50px 50px;
         }
 
@@ -585,7 +585,7 @@ export default function WindowsRDPPage() {
           margin: 0;
         }
         .hp-hero-content h1 span {
-          background: linear-gradient(135deg, #2563eb, #3b82f6);
+          background: linear-gradient(135deg, #6d28d9, #7c3aed);
           -webkit-background-clip: text;
           -webkit-text-fill-color: transparent;
         }
@@ -606,19 +606,19 @@ export default function WindowsRDPPage() {
           display: inline-flex;
           align-items: center;
           gap: 8px;
-          background: linear-gradient(135deg, #2563eb, #3b82f6);
+          background: linear-gradient(135deg, #6d28d9, #7c3aed);
           color: #fff;
           font-weight: 700;
           font-size: 14px;
           padding: 13px 26px;
           border-radius: 12px;
           text-decoration: none;
-          box-shadow: 0 12px 35px rgba(37, 99, 235, 0.3);
+          box-shadow: 0 12px 35px rgba(109, 40, 217, 0.3);
           transition: transform 0.15s ease, box-shadow 0.15s ease;
         }
         .btn-primary:hover {
           transform: translateY(-2px);
-          box-shadow: 0 16px 40px rgba(37, 99, 235, 0.4);
+          box-shadow: 0 16px 40px rgba(109, 40, 217, 0.4);
         }
         .btn-secondary {
           display: inline-flex;
@@ -631,12 +631,12 @@ export default function WindowsRDPPage() {
           padding: 13px 26px;
           border-radius: 12px;
           text-decoration: none;
-          border: 1.5px solid #dbeafe;
+          border: 1.5px solid #e5e0f5;
           transition: background 0.15s ease, border-color 0.15s ease;
         }
         .btn-secondary:hover {
-          background: #eff6ff;
-          border-color: #93c5fd;
+          background: #f8f5ff;
+          border-color: #c4b5fd;
         }
 
         /* 3D Server Visual */
@@ -768,9 +768,9 @@ export default function WindowsRDPPage() {
           border-radius: 8px;
           font-size: 10px;
           font-weight: 700;
-          color: #2b6cb0;
-          box-shadow: 0 8px 30px rgba(43, 108, 176, 0.12);
-          border: 1px solid #bee3f8;
+          color: #6d28d9;
+          box-shadow: 0 8px 30px rgba(109, 40, 217, 0.12);
+          border: 1px solid #eee5ff;
           display: flex;
           align-items: center;
           gap: 5px;
@@ -785,7 +785,7 @@ export default function WindowsRDPPage() {
         .features-grid-section {
           background: #ffffff;
           padding: 64px 32px;
-          border-bottom: 1px solid #dbeafe;
+          border-bottom: 1px solid #f0ebf8;
         }
         .features-grid {
           display: grid;
@@ -798,24 +798,24 @@ export default function WindowsRDPPage() {
           text-align: center;
           padding: 28px 20px;
           border-radius: 16px;
-          background: #eff6ff;
-          border: 1px solid #dbeafe;
+          background: #faf8ff;
+          border: 1px solid #f0ebf8;
           transition: transform 0.2s ease, box-shadow 0.2s ease;
         }
         .feature-card:hover {
           transform: translateY(-4px);
-          box-shadow: 0 12px 40px rgba(37, 99, 235, 0.08);
-          border-color: #93c5fd;
+          box-shadow: 0 12px 40px rgba(109, 40, 217, 0.08);
+          border-color: #ded1fb;
         }
         .feature-card .icon-wrap {
           width: 52px;
           height: 52px;
           border-radius: 14px;
-          background: linear-gradient(135deg, #dbeafe, #bfdbfe);
+          background: linear-gradient(135deg, #ede9fe, #ddd6fe);
           display: flex;
           align-items: center;
           justify-content: center;
-          color: #2563eb;
+          color: #6d28d9;
           margin: 0 auto 12px;
         }
         .feature-card h3 {
@@ -859,7 +859,7 @@ export default function WindowsRDPPage() {
           gap: 10px;
           padding: 10px 20px;
           border-radius: 999px;
-          border: 1px solid #dbeafe;
+          border: 1px solid #f0ebf8;
           background: #fff;
           font-size: 13px;
           font-weight: 700;
@@ -873,14 +873,14 @@ export default function WindowsRDPPage() {
           object-fit: contain;
         }
         .tab-btn:hover {
-          border-color: #93c5fd;
-          color: #2563eb;
+          border-color: #ded1fb;
+          color: #6d28d9;
         }
         .tab-btn.active {
-          background: #2563eb;
-          border-color: #2563eb;
+          background: #6d28d9;
+          border-color: #6d28d9;
           color: #fff;
-          box-shadow: 0 8px 20px rgba(37, 99, 235, 0.25);
+          box-shadow: 0 8px 20px rgba(109, 40, 217, 0.25);
         }
         .tab-tagline {
           text-align: center;
@@ -896,7 +896,7 @@ export default function WindowsRDPPage() {
           gap: 20px;
         }
         .plan-card {
-          border: 1px solid #dbeafe;
+          border: 1px solid #f0ebf8;
           border-radius: 16px;
           padding: 24px 20px;
           background: #fff;
@@ -905,19 +905,19 @@ export default function WindowsRDPPage() {
           transition: border-color 0.15s ease, transform 0.15s ease;
         }
         .plan-card:hover {
-          border-color: #93c5fd;
+          border-color: #ded1fb;
           transform: translateY(-3px);
         }
         .plan-card.pro {
-          border-color: #2563eb;
-          background: linear-gradient(180deg, #eff6ff 0%, #ffffff 40%);
+          border-color: #6d28d9;
+          background: linear-gradient(180deg, #faf6ff 0%, #ffffff 40%);
           position: relative;
         }
         .plan-badge {
           position: absolute;
           top: -12px;
           left: 22px;
-          background: #2563eb;
+          background: #6d28d9;
           color: #fff;
           font-size: 10px;
           font-weight: 700;
@@ -948,7 +948,7 @@ export default function WindowsRDPPage() {
           gap: 6px;
           margin-bottom: 14px;
           padding-bottom: 14px;
-          border-bottom: 1px dashed #dbeafe;
+          border-bottom: 1px dashed #ede7fb;
         }
         .plan-specs span {
           font-size: 13px;
@@ -973,7 +973,7 @@ export default function WindowsRDPPage() {
           font-weight: 500;
         }
         .plan-features-list li svg {
-          color: #2563eb;
+          color: #6d28d9;
           min-width: 15px;
         }
         .plan-price {
@@ -1002,28 +1002,28 @@ export default function WindowsRDPPage() {
           font-size: 13px;
           font-weight: 700;
           text-decoration: none;
-          border: 1px solid #2563eb;
-          color: #2563eb;
+          border: 1px solid #6d28d9;
+          color: #6d28d9;
           transition: all 0.15s ease;
         }
         .plan-cta:hover {
-          background: #2563eb;
+          background: #6d28d9;
           color: #fff;
         }
         .plan-card.pro .plan-cta {
-          background: #2563eb;
+          background: #6d28d9;
           color: #fff;
         }
         .plan-card.pro .plan-cta:hover {
-          background: #1d4ed8;
+          background: #5b21b6;
         }
 
         /* ---------- Plan Features ---------- */
         .plan-features-section {
-          background: #eff6ff;
+          background: #faf8ff;
           padding: 64px 32px;
-          border-top: 1px solid #dbeafe;
-          border-bottom: 1px solid #dbeafe;
+          border-top: 1px solid #f0ebf8;
+          border-bottom: 1px solid #f0ebf8;
         }
         .plan-features-grid {
           display: grid;
@@ -1034,22 +1034,22 @@ export default function WindowsRDPPage() {
         }
         .plan-feature-card {
           background: #fff;
-          border: 1px solid #dbeafe;
+          border: 1px solid #f0ebf8;
           border-radius: 12px;
           padding: 20px;
           transition: all 0.15s ease;
         }
         .plan-feature-card:hover {
-          border-color: #93c5fd;
+          border-color: #ded1fb;
           transform: translateY(-2px);
-          box-shadow: 0 8px 24px rgba(37, 99, 235, 0.06);
+          box-shadow: 0 8px 24px rgba(109, 40, 217, 0.06);
         }
         .plan-feature-card .icon {
           width: 40px;
           height: 40px;
           border-radius: 10px;
-          background: #eff6ff;
-          color: #2563eb;
+          background: #f8f5ff;
+          color: #6d28d9;
           display: flex;
           align-items: center;
           justify-content: center;
@@ -1072,7 +1072,7 @@ export default function WindowsRDPPage() {
         .use-cases-section {
           background: #ffffff;
           padding: 64px 32px;
-          border-bottom: 1px solid #dbeafe;
+          border-bottom: 1px solid #f0ebf8;
         }
         .use-cases-grid {
           display: grid;
@@ -1083,23 +1083,23 @@ export default function WindowsRDPPage() {
         }
         .use-case-card {
           text-align: center;
-          background: #eff6ff;
-          border: 1px solid #dbeafe;
+          background: #faf8ff;
+          border: 1px solid #f0ebf8;
           border-radius: 14px;
           padding: 24px 20px;
           transition: all 0.15s ease;
         }
         .use-case-card:hover {
-          border-color: #93c5fd;
+          border-color: #ded1fb;
           transform: translateY(-3px);
-          box-shadow: 0 12px 28px rgba(37, 99, 235, 0.08);
+          box-shadow: 0 12px 28px rgba(109, 40, 217, 0.08);
         }
         .use-case-card .icon {
           width: 48px;
           height: 48px;
           border-radius: 12px;
-          background: linear-gradient(135deg, #dbeafe, #bfdbfe);
-          color: #2563eb;
+          background: linear-gradient(135deg, #ede9fe, #ddd6fe);
+          color: #6d28d9;
           display: flex;
           align-items: center;
           justify-content: center;
@@ -1122,7 +1122,7 @@ export default function WindowsRDPPage() {
         .os-section {
           background: #ffffff;
           padding: 64px 32px;
-          border-bottom: 1px solid #dbeafe;
+          border-bottom: 1px solid #f0ebf8;
         }
         .os-head {
           max-width: 760px;
@@ -1146,16 +1146,16 @@ export default function WindowsRDPPage() {
           align-items: center;
           gap: 10px;
           background: #fff;
-          border: 1px solid #dbeafe;
+          border: 1px solid #f0ebf8;
           border-radius: 12px;
           padding: 20px 12px;
           text-decoration: none;
           transition: all 0.15s ease;
         }
         .os-item:hover {
-          border-color: #2563eb;
+          border-color: #6d28d9;
           transform: translateY(-2px);
-          box-shadow: 0 8px 24px rgba(37, 99, 235, 0.08);
+          box-shadow: 0 8px 24px rgba(109, 40, 217, 0.08);
         }
         .os-item img {
           width: 36px;
@@ -1196,16 +1196,16 @@ export default function WindowsRDPPage() {
           gap: 8px;
           text-align: center;
           background: #fff;
-          border: 1px solid #dbeafe;
+          border: 1px solid #f0ebf8;
           border-radius: 12px;
           padding: 16px 10px;
           text-decoration: none;
           transition: all 0.15s ease;
         }
         .location-item:hover {
-          border-color: #2563eb;
+          border-color: #6d28d9;
           transform: translateY(-3px);
-          box-shadow: 0 8px 24px rgba(37, 99, 235, 0.08);
+          box-shadow: 0 8px 24px rgba(109, 40, 217, 0.08);
         }
         .location-item img {
           width: 28px;
@@ -1225,10 +1225,10 @@ export default function WindowsRDPPage() {
 
         /* ---------- Apps grid ---------- */
         .apps-section {
-          background: #eff6ff;
+          background: #faf8ff;
           padding: 64px 32px;
-          border-top: 1px solid #dbeafe;
-          border-bottom: 1px solid #dbeafe;
+          border-top: 1px solid #f0ebf8;
+          border-bottom: 1px solid #f0ebf8;
         }
         .apps-head {
           max-width: 760px;
@@ -1253,22 +1253,22 @@ export default function WindowsRDPPage() {
           gap: 10px;
           text-align: center;
           background: #fff;
-          border: 1px solid #dbeafe;
+          border: 1px solid #f0ebf8;
           border-radius: 14px;
           padding: 18px 12px;
           text-decoration: none;
           transition: all 0.15s ease;
         }
         .app-item:hover {
-          border-color: #2563eb;
+          border-color: #6d28d9;
           transform: translateY(-3px);
-          box-shadow: 0 12px 28px rgba(37, 99, 235, 0.1);
+          box-shadow: 0 12px 28px rgba(109, 40, 217, 0.1);
         }
         .app-icon {
           width: 40px;
           height: 40px;
           border-radius: 10px;
-          background: #eff6ff;
+          background: #f8f5ff;
           display: flex;
           align-items: center;
           justify-content: center;
@@ -1301,7 +1301,7 @@ export default function WindowsRDPPage() {
           margin: 14px 0 10px;
         }
         .faq-item {
-          border-bottom: 1px solid #dbeafe;
+          border-bottom: 1px solid #f0ebf8;
           padding: 16px 0;
         }
         .faq-question {
@@ -1320,7 +1320,7 @@ export default function WindowsRDPPage() {
           font-family: "Inter", sans-serif;
         }
         .faq-question:hover {
-          color: #2563eb;
+          color: #6d28d9;
         }
         .faq-answer {
           margin-top: 8px;
@@ -1336,7 +1336,7 @@ export default function WindowsRDPPage() {
           padding: 80px 32px;
         }
         .final-card {
-          background: linear-gradient(120deg, #1e40af 0%, #1e3a8a 100%);
+          background: linear-gradient(120deg, #2b6cb0 0%, #1a365d 100%);
           border-radius: 24px;
           padding: 56px 48px;
           display: flex;
@@ -1376,7 +1376,7 @@ export default function WindowsRDPPage() {
           align-items: center;
           gap: 8px;
           background: #fff;
-          color: #1e3a8a;
+          color: #2b6cb0;
           font-weight: 700;
           font-size: 14px;
           padding: 13px 24px;
@@ -1576,7 +1576,7 @@ export default function WindowsRDPPage() {
                   <Zap size={11} /> NVMe SSD
                 </div>
                 <div className="hp-server-badge b2">
-                  <Lock size={11} /> Secure RDP
+                  <ShieldCheck size={11} /> Secure RDP
                 </div>
                 <div className="hp-server-badge b3">
                   <Users size={11} /> Admin Access
@@ -1800,7 +1800,7 @@ export default function WindowsRDPPage() {
             <details key={idx} className="faq-item">
               <summary className="faq-question">
                 {faq.q}
-                <ChevronDown size={18} style={{ color: '#2563eb' }} />
+                <ChevronDown size={18} style={{ color: '#6d28d9' }} />
               </summary>
               <div className="faq-answer">{faq.a}</div>
             </details>
