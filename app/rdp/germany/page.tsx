@@ -72,7 +72,7 @@ interface Plan {
   popular?: boolean;
 }
 
-const DUBAI_PLANS: Plan[] = [
+const GERMANY_PLANS: Plan[] = [
   {
     name: "Starter VPS",
     ram: "2 GB",
@@ -82,9 +82,9 @@ const DUBAI_PLANS: Plan[] = [
     uplink: "1 Gbps",
     ipv4: "1x IPv4",
     ipv6: "/64 IPv6",
-    price: 1900,
+    price: 2000,
     icon: "/windows-server.svg",
-    href: "https://my.vynex.pk/index.php?rp=/store/dubai-windows-rdp/starter-rdp",
+    href: "https://my.vynex.pk/index.php?rp=/store/germany-windows-rdp/starter-rdp",
     features: [
       "Full Admin RDP Access",
       "Windows Server 2022",
@@ -105,9 +105,9 @@ const DUBAI_PLANS: Plan[] = [
     uplink: "1 Gbps",
     ipv4: "1x IPv4",
     ipv6: "/64 IPv6",
-    price: 3200,
+    price: 3500,
     icon: "/windows-server.svg",
-    href: "https://my.vynex.pk/index.php?rp=/store/dubai-windows-rdp/business-rdp",
+    href: "https://my.vynex.pk/index.php?rp=/store/germany-windows-rdp/business-rdp",
     features: [
       "Full Admin RDP Access",
       "Windows Server 2022",
@@ -129,9 +129,9 @@ const DUBAI_PLANS: Plan[] = [
     uplink: "1 Gbps",
     ipv4: "2x IPv4",
     ipv6: "/64 IPv6",
-    price: 4800,
+    price: 5200,
     icon: "/windows-server.svg",
-    href: "https://my.vynex.pk/index.php?rp=/store/dubai-windows-rdp/professional-rdp",
+    href: "https://my.vynex.pk/index.php?rp=/store/germany-windows-rdp/professional-rdp",
     features: [
       "Full Admin RDP Access",
       "Windows Server 2022",
@@ -154,9 +154,9 @@ const DUBAI_PLANS: Plan[] = [
     uplink: "1 Gbps",
     ipv4: "4x IPv4",
     ipv6: "/64 IPv6",
-    price: 8800,
+    price: 9000,
     icon: "/windows-server.svg",
-    href: "https://my.vynex.pk/index.php?rp=/store/dubai-windows-rdp/enterprise-rdp",
+    href: "https://my.vynex.pk/index.php?rp=/store/germany-windows-rdp/enterprise-rdp",
     features: [
       "Full Admin RDP Access",
       "Windows Server 2022",
@@ -247,14 +247,14 @@ const PLAN_FEATURES = [
   },
 ];
 
-const DUBAI_LOCATIONS = [
-  { icon: "/dubai-vps.svg", label: "Dubai RDP", locations: "UAE" },
-  { icon: "/dubai-vps.svg", label: "Abu Dhabi RDP", locations: "UAE" },
-  { icon: "/dubai-vps.svg", label: "Sharjah RDP", locations: "UAE" },
-  { icon: "/dubai-vps.svg", label: "Ajman RDP", locations: "UAE" },
-  { icon: "/dubai-vps.svg", label: "Ras Al Khaimah RDP", locations: "UAE" },
-  { icon: "/dubai-vps.svg", label: "Fujairah RDP", locations: "UAE" },
-  { icon: "/dubai-vps.svg", label: "Umm Al Quwain RDP", locations: "UAE" },
+const GERMANY_LOCATIONS = [
+  { icon: "/germany-vps.svg", label: "Frankfurt RDP", locations: "Hesse" },
+  { icon: "/germany-vps.svg", label: "Berlin RDP", locations: "Berlin" },
+  { icon: "/germany-vps.svg", label: "Munich RDP", locations: "Bavaria" },
+  { icon: "/germany-vps.svg", label: "Hamburg RDP", locations: "Hamburg" },
+  { icon: "/germany-vps.svg", label: "Cologne RDP", locations: "North Rhine-Westphalia" },
+  { icon: "/germany-vps.svg", label: "Stuttgart RDP", locations: "Baden-Württemberg" },
+  { icon: "/germany-vps.svg", label: "Düsseldorf RDP", locations: "North Rhine-Westphalia" },
 ];
 
 const RDP_USE_CASES = [
@@ -321,13 +321,13 @@ const APP_HOSTING = [
 ];
 
 const LOCATIONS = [
-  { icon: "/dubai-vps.svg", label: "UAE RDP", locations: "Middle East" },
+  { icon: "/germany-vps.svg", label: "Germany RDP", locations: "Europe" },
   { icon: "/usa-vps.svg", label: "USA RDP", locations: "USA" },
   { icon: "/uk-vps.svg", label: "UK RDP", locations: "Europe" },
   { icon: "/pakistan-vps.svg", label: "Pakistan RDP", locations: "Pakistan" },
   { icon: "/singapore-vps.svg", label: "Singapore RDP", locations: "Asia" },
+  { icon: "/dubai-vps.svg", label: "UAE RDP", locations: "Middle East" },
   { icon: "/canada-vps.svg", label: "Canada RDP", locations: "Canada" },
-  { icon: "/australia-vps.svg", label: "Australia RDP", locations: "Australia" },
 ];
 
 const FAQS = [
@@ -336,8 +336,8 @@ const FAQS = [
     a: "Windows RDP (Remote Desktop Protocol) gives you remote access to a Windows Server with full administrator privileges. You can use it to run applications, host websites, manage databases, and perform any task as if you were sitting in front of the machine.",
   },
   {
-    q: "Why choose Dubai RDP hosting?",
-    a: "Dubai RDP hosting provides excellent connectivity for Middle East users, with low latency, high-speed connections, and reliable datacenters in Dubai and Abu Dhabi.",
+    q: "Why choose Germany RDP hosting?",
+    a: "Germany RDP hosting provides excellent connectivity for European users, with low latency, high-speed connections, and reliable datacenters in Frankfurt, Berlin, and Munich. Perfect for businesses targeting the European market.",
   },
   {
     q: "Is Windows license included?",
@@ -377,22 +377,22 @@ const FAQS = [
 /* Component                                                            */
 /* ------------------------------------------------------------------ */
 
-export default function DubaiRDPPage() {
+export default function GermanyRDPPage() {
   const structuredData = {
     "@context": "https://schema.org",
     "@type": "WebPage",
-    "name": "Dubai Windows RDP Hosting - Best Windows Remote Desktop in UAE",
-    "description": "Best Dubai Windows RDP hosting with FREE Windows OS, full admin RDP access, NVMe SSD, and 24/7 support. Available in Dubai & Abu Dhabi datacenters.",
-    "url": "https://vynex.pk/rdp/dubai",
+    "name": "Germany Windows RDP Hosting - Best Windows Remote Desktop in Germany",
+    "description": "Best Germany Windows RDP hosting with FREE Windows OS, full admin RDP access, NVMe SSD, and 24/7 support. Available in Frankfurt, Berlin & Munich datacenters.",
+    "url": "https://vynex.pk/rdp/germany",
     "mainEntity": {
       "@type": "Product",
-      "name": "Dubai Windows RDP Hosting",
-      "description": "High-performance Dubai Windows RDP with full admin access, dedicated IP, NVMe SSD, and 24/7 support.",
+      "name": "Germany Windows RDP Hosting",
+      "description": "High-performance Germany Windows RDP with full admin access, dedicated IP, NVMe SSD, and 24/7 support.",
       "offers": {
         "@type": "AggregateOffer",
         "priceCurrency": "PKR",
-        "lowPrice": "1900",
-        "highPrice": "8800",
+        "lowPrice": "2000",
+        "highPrice": "9000",
         "offerCount": "4"
       }
     }
@@ -401,29 +401,29 @@ export default function DubaiRDPPage() {
   return (
     <>
       <Head>
-        <title>Dubai Windows RDP Hosting - Best Windows Remote Desktop in UAE</title>
-        <meta name="description" content="Best Dubai Windows RDP hosting in UAE. FREE Windows OS, full admin RDP access, NVMe SSD, and 24/7 support. Starting from 1,900 PKR." />
-        <meta name="keywords" content="Dubai RDP, Windows RDP Dubai, RDP Hosting UAE, Windows RDP UAE, RDP Dubai, Windows Server RDP, Cheap RDP Dubai, Best RDP Dubai" />
+        <title>Germany Windows RDP Hosting - Best Windows Remote Desktop in Germany</title>
+        <meta name="description" content="Best Germany Windows RDP hosting in Frankfurt, Berlin & Munich. FREE Windows OS, full admin RDP access, NVMe SSD, and 24/7 support. Starting from 2,000 PKR." />
+        <meta name="keywords" content="Germany RDP, Windows RDP Germany, RDP Hosting Germany, Windows RDP Frankfurt, RDP Berlin, Windows Server RDP, Cheap RDP Germany, Best RDP Germany" />
         <meta name="robots" content="index, follow" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <meta name="author" content="Vynex Hosting Solutions" />
         
         {/* Open Graph */}
-        <meta property="og:title" content="Dubai Windows RDP Hosting - Best Windows Remote Desktop in UAE" />
-        <meta property="og:description" content="Best Dubai Windows RDP hosting with FREE Windows OS, full admin RDP access, NVMe SSD, and 24/7 support. Available in Dubai & Abu Dhabi." />
+        <meta property="og:title" content="Germany Windows RDP Hosting - Best Windows Remote Desktop in Germany" />
+        <meta property="og:description" content="Best Germany Windows RDP hosting with FREE Windows OS, full admin RDP access, NVMe SSD, and 24/7 support. Available in Frankfurt, Berlin & Munich." />
         <meta property="og:type" content="website" />
-        <meta property="og:url" content="https://vynex.pk/rdp/dubai" />
-        <meta property="og:image" content="https://vynex.pk/dubai-rdp-og.png" />
+        <meta property="og:url" content="https://vynex.pk/rdp/germany" />
+        <meta property="og:image" content="https://vynex.pk/germany-rdp-og.png" />
         <meta property="og:site_name" content="Vynex Hosting" />
         
         {/* Twitter Card */}
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content="Dubai Windows RDP Hosting - Best Windows Remote Desktop in UAE" />
-        <meta name="twitter:description" content="Best Dubai Windows RDP hosting with FREE Windows OS, full admin RDP access, NVMe SSD, and 24/7 support." />
-        <meta name="twitter:image" content="https://vynex.pk/dubai-rdp-og.png" />
+        <meta name="twitter:title" content="Germany Windows RDP Hosting - Best Windows Remote Desktop in Germany" />
+        <meta name="twitter:description" content="Best Germany Windows RDP hosting with FREE Windows OS, full admin RDP access, NVMe SSD, and 24/7 support." />
+        <meta name="twitter:image" content="https://vynex.pk/germany-rdp-og.png" />
         
         {/* Canonical URL */}
-        <link rel="canonical" href="https://vynex.pk/rdp/dubai" />
+        <link rel="canonical" href="https://vynex.pk/rdp/germany" />
         
         {/* Schema.org JSON-LD */}
         <script
@@ -1026,7 +1026,7 @@ export default function DubaiRDPPage() {
           line-height: 1.6;
         }
 
-        /* ---------- Dubai Locations ---------- */
+        /* ---------- Germany Locations ---------- */
         .locations-section {
           background: #faf8ff;
           padding: 64px 32px;
@@ -1497,14 +1497,14 @@ export default function DubaiRDPPage() {
           <div className="hp-hero-inner">
             <div className="hp-hero-content">
               <span className="eyebrow" aria-hidden="true">
-                <Flag size={13} /> Dubai Windows RDP Hosting
+                <Flag size={13} /> Germany Windows RDP Hosting
               </span>
               <h1 id="hero-heading" className="heading">
-                Best Dubai Windows RDP for <span>Fast &amp; Reliable Remote Access</span>
+                Best Germany Windows RDP for <span>Fast &amp; Reliable Remote Access</span>
               </h1>
               <p>
-                Choose Vynex for high-performance Windows RDP hosting in Dubai with FREE Windows Server 
-                and full administrative access. Deploy your RDP instantly across Dubai, Abu Dhabi, Sharjah, 
+                Choose Vynex for high-performance Windows RDP hosting in Germany with FREE Windows Server 
+                and full administrative access. Deploy your RDP instantly across Frankfurt, Berlin, Munich, 
                 and more, powered by NVMe SSD storage and 24/7 expert support.
               </p>
               <div className="hp-hero-ctas">
@@ -1513,10 +1513,10 @@ export default function DubaiRDPPage() {
                   target="_blank"
                   rel="noopener noreferrer"
                   className="btn-primary"
-                  aria-label="Buy Dubai Windows RDP Hosting"
+                  aria-label="Buy Germany Windows RDP Hosting"
                 >
                   <Rocket size={16} aria-hidden="true" />
-                  Buy Dubai RDP
+                  Buy Germany RDP
                 </a>
                 <Link href="#pricing" className="btn-secondary">
                   View Plans <ArrowRight size={15} aria-hidden="true" />
@@ -1531,7 +1531,7 @@ export default function DubaiRDPPage() {
                     <span className="led green" />
                     <span className="led blue" />
                     <span className="led yellow" />
-                    <span className="label">DXB-RDP</span>
+                    <span className="label">DE-RDP</span>
                   </div>
                   {[...Array(8)].map((_, i) => (
                     <div key={i} className="hp-server-blade">
@@ -1552,7 +1552,7 @@ export default function DubaiRDPPage() {
                   <ShieldCheck size={11} /> Secure RDP
                 </div>
                 <div className="hp-server-badge b3">
-                  <Flag size={11} /> Dubai Datacenter
+                  <Flag size={11} /> Germany Datacenter
                 </div>
               </div>
             </div>
@@ -1578,16 +1578,16 @@ export default function DubaiRDPPage() {
         {/* ================= PRICING ================= */}
         <section className="pricing-section" id="pricing" aria-labelledby="pricing-heading">
           <div className="pricing-head">
-            <span className="eyebrow" aria-hidden="true">Dubai RDP Plans</span>
-            <h2 id="pricing-heading" className="heading">Windows RDP Pricing in Dubai</h2>
+            <span className="eyebrow" aria-hidden="true">Germany RDP Plans</span>
+            <h2 id="pricing-heading" className="heading">Windows RDP Pricing in Germany</h2>
             <p className="sub">
-              High-performance Windows RDP hosting in Dubai datacenters with FREE Windows OS included.
-              Choose from multiple locations including Dubai, Abu Dhabi, and Sharjah.
+              High-performance Windows RDP hosting in Germany datacenters with FREE Windows OS included.
+              Choose from multiple locations including Frankfurt, Berlin, and Munich.
             </p>
           </div>
 
           <div className="plan-grid">
-            {DUBAI_PLANS.map((plan, i) => (
+            {GERMANY_PLANS.map((plan, i) => (
               <div
                 key={plan.name}
                 className={`plan-card ${plan.popular ? "pro" : ""}`}
@@ -1642,10 +1642,10 @@ export default function DubaiRDPPage() {
           <div style={{ textAlign: 'center', maxWidth: '760px', margin: '0 auto' }}>
             <span className="eyebrow" aria-hidden="true">Enterprise Features</span>
             <h2 id="plan-features-heading" className="heading" style={{ fontSize: '30px', margin: '14px 0 10px' }}>
-              All Dubai RDP Plans Include
+              All Germany RDP Plans Include
             </h2>
             <p className="sub">
-              Enterprise-grade features included with every Dubai RDP, designed to deliver
+              Enterprise-grade features included with every Germany RDP, designed to deliver
               dedicated resources, ultra-fast NVMe storage, secure infrastructure, and reliable uptime.
             </p>
           </div>
@@ -1670,7 +1670,7 @@ export default function DubaiRDPPage() {
               Perfect for Windows Workloads
             </h2>
             <p className="sub">
-              Our Dubai RDP is optimized for a wide range of Windows-based applications
+              Our Germany RDP is optimized for a wide range of Windows-based applications
               and server workloads.
             </p>
           </div>
@@ -1687,17 +1687,17 @@ export default function DubaiRDPPage() {
           </div>
         </section>
 
-        {/* ================= DUBAI LOCATIONS ================= */}
+        {/* ================= GERMANY LOCATIONS ================= */}
         <section className="locations-section" aria-labelledby="locations-heading">
           <div className="locations-head">
-            <span className="eyebrow" aria-hidden="true">UAE Datacenters</span>
-            <h2 id="locations-heading" className="heading">Dubai RDP Datacenter Locations</h2>
+            <span className="eyebrow" aria-hidden="true">Germany Datacenters</span>
+            <h2 id="locations-heading" className="heading">Germany RDP Datacenter Locations</h2>
             <p className="sub">
-              Deploy your Windows RDP in the nearest UAE datacenter for maximum speed, uptime, and performance.
+              Deploy your Windows RDP in the nearest Germany datacenter for maximum speed, uptime, and performance.
             </p>
           </div>
           <div className="locations-grid">
-            {DUBAI_LOCATIONS.map((loc) => (
+            {GERMANY_LOCATIONS.map((loc) => (
               <div key={loc.label} className="location-item">
                 <Image src={loc.icon} alt={loc.label} width={28} height={28} />
                 <div className="loc-label">{loc.label}</div>
@@ -1713,7 +1713,7 @@ export default function DubaiRDPPage() {
             <span className="eyebrow" aria-hidden="true">Operating Systems</span>
             <h2 id="os-heading" className="heading">Available Operating Systems for RDP</h2>
             <p className="sub">
-              Choose your preferred Windows Server or Windows OS for your Dubai RDP.
+              Choose your preferred Windows Server or Windows OS for your Germany RDP.
             </p>
           </div>
           <div className="os-grid">
@@ -1754,7 +1754,7 @@ export default function DubaiRDPPage() {
               Popular Applications Ready to Deploy
             </h2>
             <p className="sub">
-              Get started quickly with pre-installed applications on your Dubai RDP.
+              Get started quickly with pre-installed applications on your Germany RDP.
               Run n8n, MetaTrader, your CRM, web apps, Odoo ERP, and more.
             </p>
           </div>
@@ -1791,9 +1791,9 @@ export default function DubaiRDPPage() {
         <section className="final-cta" aria-labelledby="cta-heading">
           <div className="final-card">
             <div>
-              <h2 id="cta-heading">Ready to Deploy Your Dubai RDP?</h2>
+              <h2 id="cta-heading">Ready to Deploy Your Germany RDP?</h2>
               <p>
-                Get started with high-performance Dubai Windows RDP hosting today. 
+                Get started with high-performance Germany Windows RDP hosting today. 
                 Full admin access, NVMe SSD, and 24/7 support included.
               </p>
             </div>
@@ -1802,7 +1802,7 @@ export default function DubaiRDPPage() {
               target="_blank"
               rel="noopener noreferrer"
               className="final-btn"
-              aria-label="Launch your Dubai RDP now"
+              aria-label="Launch your Germany RDP now"
             >
               Deploy Now <ArrowRight size={15} aria-hidden="true" />
             </a>
