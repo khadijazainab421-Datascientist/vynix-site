@@ -4,8 +4,8 @@ import { useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import Head from "next/head";
-import Header from "../../components/Header";
-import Footer from "../../components/Footer";
+import Header from "../../../components/Header";
+import Footer from "../../../components/Footer";
 import {
   CheckCircle2,
   ArrowRight,
@@ -450,7 +450,7 @@ export default function NodeJSVPSPage() {
         />
       </Head>
 
-      <style jsx global>{`
+      <style jsx>{`
         /* ---------- Global ---------- */
         .page-section {
           padding: 80px 32px;
@@ -465,9 +465,9 @@ export default function NodeJSVPSPage() {
           font-weight: 700;
           letter-spacing: 0.8px;
           text-transform: uppercase;
-          color: #6d28d9;
-          background: #f8f5ff;
-          border: 1px solid #eee5ff;
+          color: #16a34a;
+          background: #f0fdf4;
+          border: 1px solid #bbf7d0;
           padding: 5px 14px;
           border-radius: 999px;
         }
