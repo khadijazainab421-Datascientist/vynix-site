@@ -450,7 +450,7 @@ export default function NodeJSVPSPage() {
         />
       </Head>
 
-      <style jsx>{`
+      <style jsx global>{`
         /* ---------- Global ---------- */
         .page-section {
           padding: 80px 32px;
